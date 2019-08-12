@@ -12,7 +12,7 @@ namespace DemoMarketShopSprinta.Models
         public string CustomerLastName { get; set; }
         public string CustomerStreetAddress { get; set; }
         public string CustomerCity { get; set; }
-        public int CustomerPostCode { get; set; }
+        public string CustomerPostCode { get; set; }
         public string CustomerEmail { get; set; }
         public string CustomerPhone { get; set; }
         public DateTime CustomerRegDate{ get; set; }

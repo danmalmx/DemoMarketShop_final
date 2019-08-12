@@ -12931,6 +12931,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
       "Microsoft.AspNetCore.App >= 2.2.0",
+      "Microsoft.AspNetCore.Cors >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 2.2.6",
       "Microsoft.EntityFrameworkCore.Tools >= 2.2.6",
@@ -12939,7 +12940,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Elev\\.nuget\\packages\\": {},
+    "C:\\Users\\Kurs\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -12948,14 +12949,14 @@
       "projectUniqueName": "C:\\Temp\\DemoMarketShop\\DemoMarketShopSprinta.csproj",
       "projectName": "DemoMarketShopSprinta",
       "projectPath": "C:\\Temp\\DemoMarketShop\\DemoMarketShopSprinta.csproj",
-      "packagesPath": "C:\\Users\\Elev\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\Kurs\\.nuget\\packages\\",
       "outputPath": "C:\\Temp\\DemoMarketShop\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Elev\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Kurs\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12984,6 +12985,10 @@
             "target": "Package",
             "version": "[2.2.0, )",
             "autoReferenced": true
+          },
+          "Microsoft.AspNetCore.Cors": {
+            "target": "Package",
+            "version": "[2.2.0, )"
           },
           "Microsoft.AspNetCore.Razor.Design": {
             "suppressParent": "All",
