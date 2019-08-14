@@ -1,1 +1,15 @@
-<p>home works!</p>
+<div class="row">
+    <ng-container *ngFor="let prod of service.list; let i = index">
+            <div class="col">
+                    <div class="card" style="width: 15rem;">
+                        <img src="{{ prod.ProductImage }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ prod.ProductName }}</h5>
+                            <p class="card-text">{{ prod.ProductDescription }}</p>
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="(i + 1) % 2 === 0" class="w-100"></div>
+    </ng-container>
+</div>
