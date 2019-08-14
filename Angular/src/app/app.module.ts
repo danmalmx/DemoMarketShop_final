@@ -5,8 +5,9 @@ import {RouterModule} from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-
-
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +21,7 @@ import { MyOrdersComponent } from './my-orders/my-orders.component';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 import { LoginComponent } from './login/login.component';
+import { ProductService } from './shared/product.service';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,7 @@ import { LoginComponent } from './login/login.component';
     AppRoutingModule, 
     MatButtonModule,
     NgbModule, 
+    HttpClientModule,
     MatFormFieldModule,
     MatInputModule,
     RouterModule.forRoot([
@@ -52,9 +55,11 @@ import { LoginComponent } from './login/login.component';
       {path:   'my/orders',component: MyOrdersComponent },
       {path:   'admin/products',component: AdminProductsComponent},
       {path:   'admin/orders',component: AdminOrdersComponent}
-    ])
+    ]),
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
