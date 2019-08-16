@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Temp\\DemoMarketShop\\DemoMarketShopSprinta.csproj": {}
+    "c:\\Temp\\DemoMarketShop\\DemoMarketShopSprinta.csproj": {}
   },
   "projects": {
-    "C:\\Temp\\DemoMarketShop\\DemoMarketShopSprinta.csproj": {
+    "c:\\Temp\\DemoMarketShop\\DemoMarketShopSprinta.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Temp\\DemoMarketShop\\DemoMarketShopSprinta.csproj",
+        "projectUniqueName": "c:\\Temp\\DemoMarketShop\\DemoMarketShopSprinta.csproj",
         "projectName": "DemoMarketShopSprinta",
-        "projectPath": "C:\\Temp\\DemoMarketShop\\DemoMarketShopSprinta.csproj",
+        "projectPath": "c:\\Temp\\DemoMarketShop\\DemoMarketShopSprinta.csproj",
         "packagesPath": "C:\\Users\\Kurs\\.nuget\\packages\\",
-        "outputPath": "C:\\Temp\\DemoMarketShop\\obj\\",
+        "outputPath": "c:\\Temp\\DemoMarketShop\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
