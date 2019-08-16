@@ -21,9 +21,9 @@ namespace DemoMarketShopSprinta.Models
                 context.Database.ExecuteSqlCommand("DBCC CHECKIDENT('dbo.Categories', RESEED, 1)");
                 var categorys = new Category[]
                 {
-                new Category{ CategoryName = "Good Food" },
-                new Category{ CategoryName = "Rubber Boots" },
-                new Category{ CategoryName = "Design Clothing" }
+                new Category{ CategoryName = "Good-Food" },
+                new Category{ CategoryName = "Rubber-Boots" },
+                new Category{ CategoryName = "Design-Clothing" }
                 };
                 foreach (Category c in categorys)
                 {
@@ -81,7 +81,7 @@ namespace DemoMarketShopSprinta.Models
             /////////////////////////////// Products
             if (context.Products.Any())
             {
-                return;   // DB has been seeded
+                //return;   // DB has been seeded
             }
             else
             {
@@ -90,9 +90,9 @@ namespace DemoMarketShopSprinta.Models
                 var product = new Product[]
                 {
                 new Product{ ProductName = "Hamburgare", ProductDescription = "Otroligt god burgare", ProductImage = "https://images.pexels.com/photos/1633578/pexels-photo-1633578.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260", ProductPrice = 42, ProductQuantity = 2, CategoryId = 1, OrderId = 1 },
-                new Product{ ProductName = "KokkosNöt", ProductDescription = "Flöt iland på västkusten i veckan", ProductImage = "https://images.pexels.com/photos/1030973/pexels-photo-1030973.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500", ProductPrice = 18, ProductQuantity = 3, CategoryId = 1, OrderId = 2 },
+                new Product{ ProductName = "KokosNöt", ProductDescription = "Flöt iland på västkusten i veckan", ProductImage = "https://images.pexels.com/photos/1030973/pexels-photo-1030973.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500", ProductPrice = 18, ProductQuantity = 3, CategoryId = 1, OrderId = 2 },
                 new Product{ ProductName = "Potatis", ProductDescription = "Rolig potatis i sin rätta miljö", ProductImage = "https://images.pexels.com/photos/111130/potatoes-ketchup-murder-blood-111130.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500", ProductPrice = 12, ProductQuantity = 5, CategoryId = 1, OrderId = 3 },
-                new Product{ ProductName = "Wrapp", ProductDescription = "Mexikansk tortilla med nötkött", ProductImage = "https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500", ProductPrice = 39, ProductQuantity = 2, CategoryId = 1, OrderId = 4 }
+                new Product{ ProductName = "Wrap", ProductDescription = "Mexikansk tortilla med nötkött", ProductImage = "https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500", ProductPrice = 39, ProductQuantity = 2, CategoryId = 1, OrderId = 4 }
                 };
                 foreach (Product p in product)
                 {

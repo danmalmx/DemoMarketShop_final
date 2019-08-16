@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {MatButtonModule} from '@angular/material/button';
-import {RouterModule} from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
+import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
@@ -22,6 +22,7 @@ import { AdminProductsComponent } from './admin/admin-products/admin-products.co
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 import { LoginComponent } from './login/login.component';
 import { ProductService } from './shared/product.service';
+import { CategoryService } from './shared/category.service';
 
 @NgModule({
   declarations: [
@@ -39,9 +40,9 @@ import { ProductService } from './shared/product.service';
     ],
   imports: [
     BrowserModule,
-    AppRoutingModule, 
+    AppRoutingModule,
     MatButtonModule,
-    NgbModule, 
+    NgbModule,
     HttpClientModule,
     MatFormFieldModule,
     MatInputModule,
@@ -59,7 +60,7 @@ import { ProductService } from './shared/product.service';
     BrowserAnimationsModule,
     ToastrModule.forRoot()
   ],
-  providers: [ProductService],
+  providers: [ProductService, CategoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
