@@ -1,31 +1,35 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Temp\\DemoMarketShop\\DemoMarketShopSprinta.csproj": {}
+    "/Users/danmalmx/own-projects/Lexicon/DemoMarketShop/DemoMarketShopSprinta.csproj": {}
   },
   "projects": {
-    "C:\\Temp\\DemoMarketShop\\DemoMarketShopSprinta.csproj": {
+    "/Users/danmalmx/own-projects/Lexicon/DemoMarketShop/DemoMarketShopSprinta.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Temp\\DemoMarketShop\\DemoMarketShopSprinta.csproj",
+        "projectUniqueName": "/Users/danmalmx/own-projects/Lexicon/DemoMarketShop/DemoMarketShopSprinta.csproj",
         "projectName": "DemoMarketShopSprinta",
-        "projectPath": "C:\\Temp\\DemoMarketShop\\DemoMarketShopSprinta.csproj",
-        "packagesPath": "C:\\Users\\Kurs\\.nuget\\packages\\",
-        "outputPath": "C:\\Temp\\DemoMarketShop\\obj\\",
+        "projectPath": "/Users/danmalmx/own-projects/Lexicon/DemoMarketShop/DemoMarketShopSprinta.csproj",
+        "packagesPath": "/Users/danmalmx/.nuget/packages/",
+        "outputPath": "/Users/danmalmx/own-projects/Lexicon/DemoMarketShop/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Kurs\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/danmalmx/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/aspnet-aspnetcore-tooling/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/aspnet-aspnetcore/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/aspnet-entityframeworkcore/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/aspnet-extensions/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/dotnet-core/index.json": {},
+          "https://dotnetfeed.blob.core.windows.net/dotnet-windowsdesktop/index.json": {}
         },
         "frameworks": {
           "netcoreapp2.2": {

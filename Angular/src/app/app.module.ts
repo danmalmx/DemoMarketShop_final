@@ -23,6 +23,8 @@ import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.componen
 import { LoginComponent } from './login/login.component';
 import { ProductService } from './shared/product.service';
 import { CategoryService } from './shared/category.service';
+import { RegistrationComponent } from './user/registration/registration.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { CategoryService } from './shared/category.service';
     MyOrdersComponent,
     AdminProductsComponent,
     AdminOrdersComponent,
-    LoginComponent
+    LoginComponent,
+    RegistrationComponent,
+    UserComponent
     ],
   imports: [
     BrowserModule,
