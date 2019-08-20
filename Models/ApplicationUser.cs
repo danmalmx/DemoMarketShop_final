@@ -22,7 +22,6 @@ namespace DemoMarketShopSprinta.Models
         [Column(TypeName = "nvarchar(8)")]
          public string Password { get; set; }
         [Column(TypeName = "nvarchar(8)")]
-
         public string ConfirmPassword { get; set; }
 
     }

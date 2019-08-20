@@ -40,7 +40,7 @@ namespace DemoMarketShopSprinta
             options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
 
             //Identity / Authentication injection
-            services.AddDbContext<AuthenticationContext>(option => option.UseSqlServer(Configuration.GetConnectionString("IdentityConnection")));
+            services.AddDbContext<AuthenticationContext>(option => option.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
 
             //Adding Identity 
             services.AddDefaultIdentity<ApplicationUser>()
@@ -62,14 +62,15 @@ namespace DemoMarketShopSprinta
                 app.UseHsts();
             }
 
+            app.UseAuthentication();
+
             app.UseCors(options =>
             options.WithOrigins("http://localhost:4200")
             .AllowAnyMethod()
             .AllowAnyHeader());
 
             app.UseHttpsRedirection();
-
-            
+                        
             app.UseMvc();
         }
     }
