@@ -42,6 +42,10 @@ namespace DemoMarketShopSprinta
             //Identity / Authentication injection
             services.AddDbContext<AuthenticationContext>(option => option.UseSqlServer(Configuration.GetConnectionString("IdentityConnection")));
 
+            //Adding Identity 
+            services.AddDefaultIdentity<ApplicationUser>()
+                .AddEntityFrameworkStores<AuthenticationContext>();
+
             services.AddCors();
         }
 
@@ -65,7 +69,7 @@ namespace DemoMarketShopSprinta
 
             app.UseHttpsRedirection();
 
-            app.
+            
             app.UseMvc();
         }
     }
