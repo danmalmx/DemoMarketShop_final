@@ -15,12 +15,10 @@ namespace DemoMarketShopSprinta.Models
         [Column(TypeName = "nvarchar(30)")]
         public string LastName { get; set; }
         [Column(TypeName = "nvarchar(150)")]
-        public string FullName { get { return FullName; } set { FullName = FirstName + LastName; } }
+        public string FullName { get; set; }
         [Column(TypeName = "nvarchar(40)")]
         public string Email { get; set; }
         [Column(TypeName = "nvarchar(8)")]
         public string Password { get; set; }
-
-
     }
 }

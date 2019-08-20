@@ -17,7 +17,6 @@ C:\Temp\DemoMarketShop\bin\Debug\netcoreapp2.2\DemoMarketShopSprinta.runtimeconf
 C:\Temp\DemoMarketShop\bin\Debug\netcoreapp2.2\DemoMarketShopSprinta.runtimeconfig.dev.json
 C:\Temp\DemoMarketShop\bin\Debug\netcoreapp2.2\DemoMarketShopSprinta.dll
 C:\Temp\DemoMarketShop\bin\Debug\netcoreapp2.2\DemoMarketShopSprinta.pdb
-C:\Temp\DemoMarketShop\obj\Debug\netcoreapp2.2\DemoMarketShopSprinta.csprojAssemblyReference.cache
 C:\Temp\DemoMarketShop\obj\Debug\netcoreapp2.2\DemoMarketShopSprinta.csproj.CoreCompileInputs.cache
 C:\Temp\DemoMarketShop\obj\Debug\netcoreapp2.2\DemoMarketShopSprinta.RazorAssemblyInfo.cache
 C:\Temp\DemoMarketShop\obj\Debug\netcoreapp2.2\DemoMarketShopSprinta.RazorAssemblyInfo.cs
@@ -26,3 +25,4 @@ C:\Temp\DemoMarketShop\obj\Debug\netcoreapp2.2\DemoMarketShopSprinta.AssemblyInf
 C:\Temp\DemoMarketShop\obj\Debug\netcoreapp2.2\DemoMarketShopSprinta.RazorTargetAssemblyInfo.cache
 C:\Temp\DemoMarketShop\obj\Debug\netcoreapp2.2\DemoMarketShopSprinta.dll
 C:\Temp\DemoMarketShop\obj\Debug\netcoreapp2.2\DemoMarketShopSprinta.pdb
+C:\Temp\DemoMarketShop\obj\Debug\netcoreapp2.2\DemoMarketShopSprinta.csprojAssemblyReference.cache

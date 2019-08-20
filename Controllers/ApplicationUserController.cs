@@ -14,12 +14,12 @@ namespace DemoMarketShopSprinta.Controllers
     public class ApplicationUserController : ControllerBase
     {
         private UserManager<ApplicationUser> _userManager;
-        private SignInManager<ApplicationUser> _signinManager;
+        private SignInManager<ApplicationUser> _signInManager;
 
-        public ApplicationUserController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signinManager)
+        public ApplicationUserController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
         {
             _userManager = userManager;
-            _signinManager = signinManager;
+            _signInManager = signInManager;
         }
 
         [HttpPost]
@@ -30,10 +30,9 @@ namespace DemoMarketShopSprinta.Controllers
             var applicationUser = new ApplicationUser()
             {
                 UserName = model.UserName,
-                FirstName = model.FirstName,
-                LastName = model.LastName,
                 FullName = model.FullName,
                 Email = model.Email,
+           
             };
 
             try
