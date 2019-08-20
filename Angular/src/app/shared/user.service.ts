@@ -9,6 +9,8 @@ export class UserService {
 
   constructor(private fb: FormBuilder, private http: HttpClient) { }
 
+  readonly BaseUri = 'https://localhost:5001/api/'
+
   formModel = this.fb.group({
     UserName: ['', Validators.required],
     Email: ['', Validators.email],
@@ -28,5 +30,15 @@ export class UserService {
         passwordCtrl.setErrors(null);
       }
     }
+  }
+
+  register() {
+    let body = {
+      UserName: this.formModel.value.UserName,
+      Email: this.formModel.value.Email,
+      FullName: this.formModel.value.FullName,
+      Password: this.formModel.value.Password
+    };
+    return this.http.post(this.BaseUri + '/ApplicationUser/Register', body)
   }
 }
