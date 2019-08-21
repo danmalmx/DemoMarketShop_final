@@ -9,7 +9,7 @@ export class UserService {
 
   constructor(private fb: FormBuilder, private http: HttpClient) { }
 
-  readonly BaseUri = 'https://localhost:5001/api/'
+  readonly BaseUri = 'https://localhost:44318/api';
 
   formModel = this.fb.group({
     UserName: ['', Validators.required],
@@ -20,11 +20,12 @@ export class UserService {
       ConfirmPassword: ['', Validators.required]
     }, { validator: this.comparePasswords })
   });
+
   comparePasswords(fb: FormGroup) {
     let passwordCtrl = fb.get('ConfirmPassword');
     if (passwordCtrl.errors == null || 'passwordMismatch' in passwordCtrl.errors) {
-      if (fb.get('Password').value != passwordCtrl.value) {
-        passwordCtrl.setErrors({ passwordMismatch: true })
+      if (fb.get('Password').value !== passwordCtrl.value) {
+        passwordCtrl.setErrors({ passwordMismatch: true });
       }
       else {
         passwordCtrl.setErrors(null);
@@ -33,12 +34,12 @@ export class UserService {
   }
 
   register() {
-    let body = {
+    const body = {
       UserName: this.formModel.value.UserName,
       Email: this.formModel.value.Email,
       FullName: this.formModel.value.FullName,
-      Password: this.formModel.value.Password
+      Password: this.formModel.value.Passwords.Password
     };
-    return this.http.post(this.BaseUri + '/ApplicationUser/Register', body)
+    return this.http.post(this.BaseUri + '/ApplicationUser/Register', body);
   }
 }

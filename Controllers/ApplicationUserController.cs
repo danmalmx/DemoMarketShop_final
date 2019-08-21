@@ -30,8 +30,8 @@ namespace DemoMarketShopSprinta.Controllers
             var applicationUser = new ApplicationUser()
             {
                 UserName = model.UserName,
-                FullName = model.FullName,
                 Email = model.Email,
+                FullName = model.FullName
            
             };
 
