@@ -4,7 +4,7 @@
       <a *ngFor="let c of categoryService.list"
       routerLink="/"
       [queryParams]="{ category: c.CategoryName }"
-      class="list-group-item list-group-item"
+      class="list-group-item list-group-item-action"
       [class.active]="category === c.CategoryName">
         {{ c.CategoryName }}
       </a>
