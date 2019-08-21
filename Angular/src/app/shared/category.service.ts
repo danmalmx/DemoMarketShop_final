@@ -7,7 +7,6 @@ import { Category } from './category.model';
   providedIn: 'root'
 })
 export class CategoryService {
-  list: Category[];
   readonly rootUrl = 'https://localhost:44318/api';
 
   constructor(private http: HttpClient) { }
