@@ -3,7 +3,7 @@ import { ProductService } from './../shared/product.service';
 import { CategoryService } from '../shared/category.service';
 import { Product } from './../shared/product.model';
 import { ToastrService } from 'ngx-toastr';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -29,4 +29,6 @@ export class HomeComponent implements OnInit {
     this.productService.getProducts();
     this.categoryService.getCategories();
   }
+
+
 }
