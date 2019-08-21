@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Category } from './category.model';
@@ -11,9 +12,7 @@ export class CategoryService {
 
   constructor(private http: HttpClient) { }
 
-  getCategories() {
-    this.http.get(this.rootUrl + '/Categories')
-    .toPromise()
-    .then(res => this.list = res as Category[]);
+  getAll(): Observable<Category[]> {
+    return this.http.get<Category[]>(this.rootUrl + '/Categories');
   }
 }

@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-3">
     <div class="list-group">
-      <a *ngFor="let c of categoryService.list"
+      <a *ngFor="let c of categories$"
       routerLink="/"
       [queryParams]="{ category: c.CategoryName }"
       class="list-group-item list-group-item-action"
@@ -12,7 +12,7 @@
   </div>
   <div class="col">
     <div class="row">
-      <ng-container *ngFor="let prod of productService.list; let i = index">
+      <ng-container *ngFor="let prod of products; let i = index">
         <div class="col">
             <div class="card" style="width: 15rem;">
                 <img src="{{ prod.ProductImage }}" class="card-img-top" alt="...">

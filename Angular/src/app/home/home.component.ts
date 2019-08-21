@@ -8,25 +8,35 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styles: []
 })
 
 export class HomeComponent implements OnInit {
-  category: string;
+  products: Product[];
   filteredProducts: Product[];
+  categories$;
+  category: string;
 
   constructor(
     route: ActivatedRoute,
-    private productService: ProductService,
-    private categoryService: CategoryService) {
+    productService: ProductService,
+    categoryService: CategoryService) {
+      productService.getAll().subscribe(products => this.products = products);
+
+      this.categories$ = categoryService.getAll();
+
       route.queryParamMap.subscribe(params => {
         this.category = params.get('category');
+
+        // this.filteredProducts = (this.category) ?
+        //   this.products.filter(p => { p.category === this.category }) :
+        //   this.products;
+
+        //this.category$ = params.get('category');    // Titta på senare: Mange
         //this.filteredProducts = (this.category) ?  // Video 314 @ 6:12
       });
     }
 
   ngOnInit() {
-    this.productService.getProducts();
-    this.categoryService.getCategories();
   }
 }
