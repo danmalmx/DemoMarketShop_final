@@ -7,16 +7,30 @@ import { HomeComponent } from './home/home.component';
 import { RegistrationComponent } from './user/registration/registration.component';
 import { LoginComponent } from './user/login/login.component';
 
+// const routes: Routes = [
+//   { path: '', redirectTo: '/user/login', pathMatch: 'prefix' },
+//   { path: 'user', component: UserComponent,
+//     children: [
+//         { path: 'registration', component: RegistrationComponent },
+//         { path: 'login', component: LoginComponent }
+//       ]
+//     },
+//     {path: '', component: HomeComponent, canActivate: [AuthGuard]},
+//     {path:   'shopping-cart', component: ShoppingCartComponent},
+//   ];
+
 const routes: Routes = [
-  { path: '', redirectTo: '/user/login', pathMatch: 'full' },
   { path: 'user', component: UserComponent,
-    children: [
-      { path: 'registration', component: RegistrationComponent },
-      { path: 'login', component: LoginComponent }
-    ]
+  children: [
+    {path: 'login', component: LoginComponent},
+    {path: 'registration', component: RegistrationComponent},
+  ]
+},
+  { path: '', component: HomeComponent, canActivate: [AuthGuard]
+    // children: [
+    //   { path: 'shopping-cart', component: ShoppingCartComponent }
+    // ]
   },
-  {path: '', component: HomeComponent, canActivate: [AuthGuard]},
-  {path:   'shopping-cart', component: ShoppingCartComponent},
 ];
 
 @NgModule({

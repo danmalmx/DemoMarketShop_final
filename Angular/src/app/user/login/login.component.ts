@@ -21,14 +21,17 @@ export class LoginComponent implements OnInit {
   constructor(private service: UserService, private router: Router, private toastr: ToastrService) { }
 
   ngOnInit() {
+    if(localStorage.getItem('token') != null)
+    this.router.navigateByUrl('');
   }
 
   onSubmit(form: NgForm) {
     this.service.login(form.value).subscribe(
       (res: any) => {
-        localStorage.setItem('token', res.token);
+        var token = localStorage.setItem('token', res.token);
+        token;
         this.toastr.success('You are signed in', 'Successfull signin', { timeOut: 2000 } );
-        this.router.navigateByUrl('');
+        this.router.navigate(['']);
       },
       err => {
         if(err.status === 400){
