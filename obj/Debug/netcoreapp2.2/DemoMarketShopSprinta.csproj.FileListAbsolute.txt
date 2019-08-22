@@ -50,3 +50,17 @@ C:\Temp\DemoMarketShop\obj\Debug\netcoreapp2.2\DemoMarketShopSprinta.AssemblyInf
 C:\Temp\DemoMarketShop\obj\Debug\netcoreapp2.2\DemoMarketShopSprinta.RazorTargetAssemblyInfo.cache
 C:\Temp\DemoMarketShop\obj\Debug\netcoreapp2.2\DemoMarketShopSprinta.dll
 C:\Temp\DemoMarketShop\obj\Debug\netcoreapp2.2\DemoMarketShopSprinta.pdb
+C:\Users\MadMange\Desktop\Repository_Temp\DemoMarketShop\bin\Debug\netcoreapp2.2\DemoMarketShopSprinta.deps.json
+C:\Users\MadMange\Desktop\Repository_Temp\DemoMarketShop\bin\Debug\netcoreapp2.2\DemoMarketShopSprinta.runtimeconfig.json
+C:\Users\MadMange\Desktop\Repository_Temp\DemoMarketShop\bin\Debug\netcoreapp2.2\DemoMarketShopSprinta.runtimeconfig.dev.json
+C:\Users\MadMange\Desktop\Repository_Temp\DemoMarketShop\bin\Debug\netcoreapp2.2\DemoMarketShopSprinta.dll
+C:\Users\MadMange\Desktop\Repository_Temp\DemoMarketShop\bin\Debug\netcoreapp2.2\DemoMarketShopSprinta.pdb
+C:\Users\MadMange\Desktop\Repository_Temp\DemoMarketShop\obj\Debug\netcoreapp2.2\DemoMarketShopSprinta.csprojAssemblyReference.cache
+C:\Users\MadMange\Desktop\Repository_Temp\DemoMarketShop\obj\Debug\netcoreapp2.2\DemoMarketShopSprinta.csproj.CoreCompileInputs.cache
+C:\Users\MadMange\Desktop\Repository_Temp\DemoMarketShop\obj\Debug\netcoreapp2.2\DemoMarketShopSprinta.RazorAssemblyInfo.cache
+C:\Users\MadMange\Desktop\Repository_Temp\DemoMarketShop\obj\Debug\netcoreapp2.2\DemoMarketShopSprinta.RazorAssemblyInfo.cs
+C:\Users\MadMange\Desktop\Repository_Temp\DemoMarketShop\obj\Debug\netcoreapp2.2\DemoMarketShopSprinta.AssemblyInfoInputs.cache
+C:\Users\MadMange\Desktop\Repository_Temp\DemoMarketShop\obj\Debug\netcoreapp2.2\DemoMarketShopSprinta.AssemblyInfo.cs
+C:\Users\MadMange\Desktop\Repository_Temp\DemoMarketShop\obj\Debug\netcoreapp2.2\DemoMarketShopSprinta.RazorTargetAssemblyInfo.cache
+C:\Users\MadMange\Desktop\Repository_Temp\DemoMarketShop\obj\Debug\netcoreapp2.2\DemoMarketShopSprinta.dll
+C:\Users\MadMange\Desktop\Repository_Temp\DemoMarketShop\obj\Debug\netcoreapp2.2\DemoMarketShopSprinta.pdb
