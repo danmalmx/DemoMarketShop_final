@@ -37,6 +37,12 @@ export class HomeComponent implements OnInit {
       });
     }
 
+    filter(query: string) {
+      this.filteredProducts = (query) ?
+      this.products.filter(p => p.ProductName.toLowerCase().includes(query.toLowerCase())) :
+      this.products;
+    }
+
   ngOnInit() {
   }
 
