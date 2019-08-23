@@ -1,3 +1,7 @@
+import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
+import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
+import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
+import { ForbiddenComponent } from './admin/forbidden/forbidden.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { AuthGuard } from './auth/auth.guard';
 import { NgModule } from '@angular/core';
@@ -25,12 +29,15 @@ const routes: Routes = [
     {path: 'login', component: LoginComponent},
     {path: 'registration', component: RegistrationComponent},
   ]
-},
-  { path: '', component: HomeComponent, canActivate: [AuthGuard]
-    // children: [
-    //   { path: 'shopping-cart', component: ShoppingCartComponent }
-    // ]
   },
+  { path: '', component: HomeComponent, canActivate: [AuthGuard],
+      children: [
+        { path: 'shopping-cart', component: ShoppingCartComponent },
+    ]
+   },
+   { path: 'forbidden', component: ForbiddenComponent },
+   { path: 'admin/admin-panel', component: AdminPanelComponent, canActivate: [AuthGuard], data: {permittedRoles: ['Admin']} }
+
 ];
 
 @NgModule({

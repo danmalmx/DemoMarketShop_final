@@ -1,14 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
 
-@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
-@import "~bootstrap/dist/css/bootstrap.css";
-
-
-body{
-  padding-top:80px;
+img {
+  max-height: 150px;
 }
 
-/*
+
+
 input.form-control,input.form-control:focus{
   background-color: #636b7b;
   color: #fff;
@@ -63,6 +59,7 @@ div.form-group.required>label:first-child:after{
   box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
 }
 
+/* Tabs */
 .tab-header{
   text-align: center;
 }
@@ -97,4 +94,4 @@ div.form-group input.invalid{
 div.form-group label:first-child{
   text-transform: uppercase;
   font-size: 0.9rem;
-} */
+}

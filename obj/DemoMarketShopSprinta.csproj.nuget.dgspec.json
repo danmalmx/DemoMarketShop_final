@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Temp\\DemoMarketShop\\DemoMarketShopSprinta.csproj": {}
+    "C:\\Temp\\DemoMarketShop\\DemoMarketShopSprinta.csproj": {}
   },
   "projects": {
-    "c:\\Temp\\DemoMarketShop\\DemoMarketShopSprinta.csproj": {
+    "C:\\Temp\\DemoMarketShop\\DemoMarketShopSprinta.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Temp\\DemoMarketShop\\DemoMarketShopSprinta.csproj",
+        "projectUniqueName": "C:\\Temp\\DemoMarketShop\\DemoMarketShopSprinta.csproj",
         "projectName": "DemoMarketShopSprinta",
-        "projectPath": "c:\\Temp\\DemoMarketShop\\DemoMarketShopSprinta.csproj",
+        "projectPath": "C:\\Temp\\DemoMarketShop\\DemoMarketShopSprinta.csproj",
         "packagesPath": "C:\\Users\\Kurs\\.nuget\\packages\\",
-        "outputPath": "c:\\Temp\\DemoMarketShop\\obj\\",
+        "outputPath": "C:\\Temp\\DemoMarketShop\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\MadMange\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Kurs\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

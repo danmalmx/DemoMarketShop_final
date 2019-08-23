@@ -1,3 +1,4 @@
+import { AuthInterceptor } from './auth/auth.interceptor';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
@@ -5,7 +6,7 @@ import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { ToastrModule } from 'ngx-toastr';
@@ -27,9 +28,13 @@ import { RegistrationComponent } from './user/registration/registration.componen
 import { UserComponent } from './user/user.component';
 import { UserService } from './shared/user.service';
 import { LoginComponent } from './user/login/login.component';
+import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
+import { ForbiddenComponent } from './admin/forbidden/forbidden.component';
 
 @NgModule({
   declarations: [
+    AdminOrdersComponent,
+    AdminProductsComponent,
     AppComponent,
     BsNavbarComponent,
     HomeComponent,
@@ -38,11 +43,12 @@ import { LoginComponent } from './user/login/login.component';
     CheckOutComponent,
     OrderSuccessComponent,
     MyOrdersComponent,
-    AdminProductsComponent,
     AdminOrdersComponent,
     RegistrationComponent,
     UserComponent,
-    LoginComponent
+    LoginComponent,
+    AdminPanelComponent,
+    ForbiddenComponent
   ],
   imports: [
     BrowserModule,
@@ -68,7 +74,11 @@ import { LoginComponent } from './user/login/login.component';
     //   {path:   'admin/orders',component: AdminOrdersComponent}
     // ])
   ],
-  providers: [ProductService, CategoryService, UserService],
+  providers: [ProductService, CategoryService, UserService, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

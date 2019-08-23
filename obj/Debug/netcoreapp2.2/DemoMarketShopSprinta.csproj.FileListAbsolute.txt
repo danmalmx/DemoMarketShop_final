@@ -50,3 +50,4 @@ C:\Temp\DemoMarketShop\obj\Debug\netcoreapp2.2\DemoMarketShopSprinta.AssemblyInf
 C:\Temp\DemoMarketShop\obj\Debug\netcoreapp2.2\DemoMarketShopSprinta.RazorTargetAssemblyInfo.cache
 C:\Temp\DemoMarketShop\obj\Debug\netcoreapp2.2\DemoMarketShopSprinta.dll
 C:\Temp\DemoMarketShop\obj\Debug\netcoreapp2.2\DemoMarketShopSprinta.pdb
+C:\Temp\DemoMarketShop\obj\Debug\netcoreapp2.2\DemoMarketShopSprinta.csprojAssemblyReference.cache

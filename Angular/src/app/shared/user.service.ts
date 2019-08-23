@@ -1,6 +1,11 @@
+import { AuthGuard } from './../auth/auth.guard';
 import { Injectable } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { HttpClient } from "@angular/common/http";
+
+import { JwtHelperService } from "@auth0/angular-jwt";
+import { ClassField } from '@angular/compiler';
+
 
 @Injectable({
   providedIn: 'root'
@@ -45,6 +50,28 @@ export class UserService {
 
   login(formData) {
     return this.http.post(this.BaseUri + '/ApplicationUser/Login', formData);
+  }
 
+  isLoggedIn() {
+    const payLoad = JSON.parse(window.atob(localStorage.getItem('token').split('.')[1]));
+    const userRole = payLoad.role;
+    if (userRole === 'Admin') {
+      return true;
+    }
+
+    return !userRole;
+  }
+
+  roleMatch(allowedRoles): boolean {
+    let isMatch = false;
+    const payLoad = JSON.parse(window.atob(localStorage.getItem('token').split('.')[1]));
+    const userRole = payLoad.role;
+    allowedRoles.forEach(element => {
+      if (userRole === element) {
+        isMatch = true;
+        return false;
+      }
+    });
+    return isMatch;
   }
 }

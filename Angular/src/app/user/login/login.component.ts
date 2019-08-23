@@ -3,14 +3,11 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { timeout } from 'q';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styles: [
-
-  ]
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
   formModel = {
