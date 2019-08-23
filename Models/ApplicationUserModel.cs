@@ -20,5 +20,8 @@ namespace DemoMarketShopSprinta.Models
         public string Email { get; set; }
         [Column(TypeName = "nvarchar(8)")]
         public string Password { get; set; }
+
+        [Column(TypeName = "nvarchar(8)")]
+        public string Role { get; set; }
     }
 }

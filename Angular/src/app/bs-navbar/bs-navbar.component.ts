@@ -1,3 +1,4 @@
+import { JwtHelperService } from '@auth0/angular-jwt';
 import { UserService } from './../shared/user.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -18,5 +19,6 @@ export class BsNavbarComponent implements OnInit {
     localStorage.removeItem('token');
     this.router.navigate(['/user/login']);
   }
+
 
 }
