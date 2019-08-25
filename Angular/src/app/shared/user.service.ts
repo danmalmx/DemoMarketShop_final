@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { HttpClient } from "@angular/common/http";
 
-import { JwtHelperService } from "@auth0/angular-jwt";
 import { ClassField } from '@angular/compiler';
 
 
@@ -14,7 +13,8 @@ export class UserService {
 
   constructor(private fb: FormBuilder, private http: HttpClient) { }
 
-  readonly BaseUri = 'https://localhost:44318/api';
+  // readonly BaseUri = 'https://localhost:44318/api';
+  readonly BaseUri = 'https://localhost:5001/api';
 
   formModel = this.fb.group({
     UserName: ['', Validators.required],

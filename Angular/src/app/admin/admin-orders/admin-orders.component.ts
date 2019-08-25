@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { OrdersServices } from 'src/app/shared/orders.service';
+import { NgForm } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+import { Orders } from 'src/app/shared/orders.model';
 
 @Component({
   selector: 'app-admin-orders',
@@ -7,9 +11,57 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminOrdersComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: OrdersServices, private toastr: ToastrService, ) { }
 
   ngOnInit() {
+    this.service.refreshList();
+    this.resetForm();
+  }
+
+  resetForm(form?: NgForm) {
+    if (form != null) {
+      form.reset();
+    }
+    this.service.formData = {
+      OrderId: null,
+      OrderShipName: '',
+      OrderStreetAddress: '',
+      OrderCity: '',
+      OrderCountry: '',
+      OrderTrackingNumber: '',
+      CustomerId: null,
+    }
+  }
+
+  onSubmit(form: NgForm) {
+    if (form.value.OrderId == null) {
+      this.insertRecord(form);
+    } else {
+      this.insertRecord(form);
+      this.service.refreshList();
+    }
+
+  }
+  insertRecord(form: NgForm) {
+    this.service.editOrders(form.value).subscribe(
+      res => {
+        this.toastr.success('Order updated', 'Successful submission');
+        this.resetForm(form);
+        this.service.refreshList();
+
+      })
+  }
+
+  // updateRecord(form: NgForm) {
+  //   this.service.editOrders(form.value).subscribe(
+  //     res => {
+  //       this.toastr.success('Order updated', 'Successful submission'),
+  //         this.resetForm(form)
+  //     })
+  // }
+
+  populateForm(ord: Orders) {
+    this.service.formData = Object.assign({}, ord);
   }
 
 }
