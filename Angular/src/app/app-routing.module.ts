@@ -1,3 +1,5 @@
+import { ProductsComponent } from './products/products.component';
+import { ProductCardComponent } from './product-card/product-card.component';
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
 import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
@@ -35,11 +37,13 @@ const routes: Routes = [
     path: '', component: HomeComponent, canActivate: [AuthGuard],
     children: [
       { path: 'shopping-cart', component: ShoppingCartComponent },
+      { path: 'forbidden', component: ForbiddenComponent },
+      { path: 'products/products', component: ProductsComponent },
+
       { path: 'admin/admin-orders', component: AdminOrdersComponent, canActivate: [AuthGuard], data: { permittedRoles: ['Admin'] } },
       { path: 'admin/admin-products', component: AdminProductsComponent, canActivate: [AuthGuard], data: { permittedRoles: ['Admin'] } },
     ]
   },
-  { path: 'forbidden', component: ForbiddenComponent }
 ];
 
 @NgModule({
