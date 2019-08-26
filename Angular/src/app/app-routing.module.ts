@@ -24,20 +24,22 @@ import { LoginComponent } from './user/login/login.component';
 //   ];
 
 const routes: Routes = [
-  { path: 'user', component: UserComponent,
-  children: [
-    {path: 'login', component: LoginComponent},
-    {path: 'registration', component: RegistrationComponent},
-  ]
-  },
-  { path: '', component: HomeComponent, canActivate: [AuthGuard],
-      children: [
-        { path: 'shopping-cart', component: ShoppingCartComponent },
+  {
+    path: 'user', component: UserComponent,
+    children: [
+      { path: 'login', component: LoginComponent },
+      { path: 'registration', component: RegistrationComponent },
     ]
-   },
-   { path: 'forbidden', component: ForbiddenComponent },
-   { path: 'admin/admin-panel', component: AdminPanelComponent, canActivate: [AuthGuard], data: {permittedRoles: ['Admin']} }
-
+  },
+  {
+    path: '', component: HomeComponent, canActivate: [AuthGuard],
+    children: [
+      { path: 'shopping-cart', component: ShoppingCartComponent },
+      { path: 'admin/admin-orders', component: AdminOrdersComponent, canActivate: [AuthGuard], data: { permittedRoles: ['Admin'] } },
+      { path: 'admin/admin-products', component: AdminProductsComponent, canActivate: [AuthGuard], data: { permittedRoles: ['Admin'] } },
+    ]
+  },
+  { path: 'forbidden', component: ForbiddenComponent }
 ];
 
 @NgModule({

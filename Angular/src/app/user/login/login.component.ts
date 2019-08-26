@@ -18,23 +18,24 @@ export class LoginComponent implements OnInit {
   constructor(private service: UserService, private router: Router, private toastr: ToastrService) { }
 
   ngOnInit() {
-    if(localStorage.getItem('token') != null)
-    this.router.navigateByUrl('');
+    if (localStorage.getItem('token') != null) {
+      this.router.navigateByUrl('');
+    }
   }
 
   onSubmit(form: NgForm) {
     this.service.login(form.value).subscribe(
       (res: any) => {
-        var token = localStorage.setItem('token', res.token);
+        const token = localStorage.setItem('token', res.token);
+        // tslint:disable-next-line: no-unused-expression
         token;
         this.toastr.success('You are signed in', 'Successfull signin', { timeOut: 2000 } );
         this.router.navigate(['']);
       },
       err => {
-        if(err.status === 400){
+        if (err.status === 400) {
           this.toastr.error('Incorrect username or password', 'Authentication failed');
-        }
-        else {
+        } else {
           console.log(err);
         }
       });

@@ -4,7 +4,7 @@ export class Product {
     ProductDescription: string;
     ProductImage: string;
     ProductPrice: number;
-    ProductQuantity: number; 
+    ProductQuantity: number;
     CategoryId: number;
     OrderId: number;
 }
