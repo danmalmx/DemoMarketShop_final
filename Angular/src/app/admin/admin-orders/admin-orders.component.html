@@ -40,7 +40,7 @@
           <input name="CustomerId" #CustomerId="ngModel" [(ngModel)]="service.formData.CustomerId" class="form-control">
         </div>
         <div class="form-group">
-          <button type="submit" class="btn btn-info btn-lg btn-block" [disabled]="form.invalid">Change order</button>
+          <button (submit)="onSubmit()" type="submit" class="btn btn-info btn-lg btn-block" [disabled]="form.invalid">Change order</button>
         </div>
       </form>
     </div>

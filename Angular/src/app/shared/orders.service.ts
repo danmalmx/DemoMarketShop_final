@@ -15,6 +15,10 @@ export class OrdersServices {
 
   constructor(private http: HttpClient) { }
 
+  postOrders(formData: Orders) {
+    return this.http.post(this.rootUrl + '/Orders', formData);
+  }
+
   editOrders(formData: Orders) {
     return this.http.put(this.rootUrl + '/Orders/' + formData.OrderId, formData);
   }
