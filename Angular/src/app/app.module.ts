@@ -1,3 +1,4 @@
+import { ProductCardComponent } from './product-card/product-card.component';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -8,7 +9,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ReactiveFormsModule, FormsModule } from "@angular/forms";
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -48,7 +49,8 @@ import { ForbiddenComponent } from './admin/forbidden/forbidden.component';
     UserComponent,
     LoginComponent,
     AdminPanelComponent,
-    ForbiddenComponent
+    ForbiddenComponent,
+    ProductCardComponent
   ],
   imports: [
     BrowserModule,

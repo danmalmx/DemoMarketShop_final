@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -100,6 +101,26 @@ namespace DemoMarketShopSprinta.Models
                 }
                 context.SaveChanges();
             }
+
+
         }
+
+        //public static void Initialize2(AuthenticationContext context)
+        //{
+        //    context.Database.ExecuteSqlCommand("DBCC CHECKIDENT('dbo.AspNetRoles', RESEED, 1)");
+        //    var RolesModel = new IdentityRole[]
+        //    {
+        //        new IdentityRole{ Name = "Admin", NormalizedName = "Admin"},
+        //        new IdentityRole{ Name = "Customer", NormalizedName = "Customer"}
+        //    };
+
+        //    foreach (IdentityRole p in RolesModel)
+        //    {
+        //        context.Roles.Add(p);
+        //    }
+        //    context.SaveChanges();
+        //}
     }
+       
 }
+

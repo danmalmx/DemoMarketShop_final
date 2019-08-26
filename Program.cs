@@ -21,6 +21,9 @@ namespace DemoMarketShopSprinta
                 {
                     var context = services.GetRequiredService<ShopContext>();
                     DbInitializer.Initialize(context);
+
+                    //var context2 = services.GetRequiredService<AuthenticationContext>();
+                    //DbInitializer.Initialize2(context2);
                 }
                 catch (Exception ex)
                 {

@@ -2,10 +2,7 @@
 img {
   max-height: 150px;
 }
-
-
-
-input.form-control,input.form-control:focus{
+input.form-control, input.form-control:focus{
   background-color: #636b7b;
   color: #fff;
   border: 1px solid #636b7b;
@@ -59,7 +56,6 @@ div.form-group.required>label:first-child:after{
   box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
 }
 
-/* Tabs */
 .tab-header{
   text-align: center;
 }

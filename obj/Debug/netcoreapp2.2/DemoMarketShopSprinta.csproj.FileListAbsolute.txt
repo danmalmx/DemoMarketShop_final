@@ -64,3 +64,4 @@ C:\Users\MadMange\Desktop\Repository_Temp\DemoMarketShop\obj\Debug\netcoreapp2.2
 C:\Users\MadMange\Desktop\Repository_Temp\DemoMarketShop\obj\Debug\netcoreapp2.2\DemoMarketShopSprinta.RazorTargetAssemblyInfo.cache
 C:\Users\MadMange\Desktop\Repository_Temp\DemoMarketShop\obj\Debug\netcoreapp2.2\DemoMarketShopSprinta.dll
 C:\Users\MadMange\Desktop\Repository_Temp\DemoMarketShop\obj\Debug\netcoreapp2.2\DemoMarketShopSprinta.pdb
+C:\Temp\DemoMarketShop\obj\Debug\netcoreapp2.2\DemoMarketShopSprinta.csprojAssemblyReference.cache
