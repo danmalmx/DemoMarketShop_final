@@ -32,6 +32,7 @@ import { LoginComponent } from './user/login/login.component';
 import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
 import { ForbiddenComponent } from './admin/forbidden/forbidden.component';
 import { OrdersServices } from './shared/orders.service';
+import { ShoppingCartService } from './shared/shopping-cart.service';
 
 @NgModule({
   declarations: [
@@ -77,7 +78,7 @@ import { OrdersServices } from './shared/orders.service';
     //   {path:   'admin/orders',component: AdminOrdersComponent}
     // ])
   ],
-  providers: [ProductService, CategoryService, UserService, OrdersServices,  {
+  providers: [ProductService, CategoryService, UserService, OrdersServices, ShoppingCartService,  {
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true
