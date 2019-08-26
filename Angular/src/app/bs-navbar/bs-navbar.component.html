@@ -16,9 +16,8 @@
           aria-haspopup="true" aria-expanded="false">Welcome You</a>
         <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
       <li *ngIf="!service.isLoggedIn()"><a class="dropdown-item" routerLink="/user/login">LogIn</a></li>
-      <li *ngIf="service.isLoggedIn()"><a class="dropdown-item" routerLink="/admin/admin-panel">Admin - Panel</a></li>
-      <li *ngIf="service.isLoggedIn()"><a class="dropdown-item" routerLink="/admin/admin-orders">Admin - Orders</a></li>
-      <li *ngIf="service.isLoggedIn()"><a class="dropdown-item" routerLink="/admin/admin-products">Admin Products</a>
+      <li *ngIf="service.isAdminLoggedIn()"><a class="dropdown-item" routerLink="/admin/admin-orders">Admin - Orders</a></li>
+      <li *ngIf="service.isAdminLoggedIn()"><a class="dropdown-item" routerLink="/admin/admin-products">Admin Products</a>
       </li>
       <li *ngIf="service.isLoggedIn()"><a class="dropdown-item" (click)="onLogout()" routerLink="/user/login">Logout</a>
       </li>

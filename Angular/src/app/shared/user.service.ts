@@ -1,9 +1,7 @@
 import { AuthGuard } from './../auth/auth.guard';
 import { Injectable } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { HttpClient } from "@angular/common/http";
-
-import { ClassField } from '@angular/compiler';
+import { HttpClient } from '@angular/common/http';
 
 
 @Injectable({
@@ -13,8 +11,9 @@ export class UserService {
 
   constructor(private fb: FormBuilder, private http: HttpClient) { }
 
-  // readonly BaseUri = 'https://localhost:44318/api';
-  readonly BaseUri = 'https://localhost:5001/api';
+  // readonly rootUrl = 'https://localhost:5001/api';
+  readonly BaseUri = 'https://localhost:44318/api';
+
 
   formModel = this.fb.group({
     UserName: ['', Validators.required],
@@ -27,7 +26,7 @@ export class UserService {
   });
 
   comparePasswords(fb: FormGroup) {
-    let passwordCtrl = fb.get('ConfirmPassword');
+    const passwordCtrl = fb.get('ConfirmPassword');
     if (passwordCtrl.errors == null || 'passwordMismatch' in passwordCtrl.errors) {
       if (fb.get('Password').value !== passwordCtrl.value) {
         passwordCtrl.setErrors({ passwordMismatch: true });
@@ -52,10 +51,20 @@ export class UserService {
     return this.http.post(this.BaseUri + '/ApplicationUser/Login', formData);
   }
 
-  isLoggedIn() {
+  isAdminLoggedIn() {
     const payLoad = JSON.parse(window.atob(localStorage.getItem('token').split('.')[1]));
     const userRole = payLoad.role;
     if (userRole === 'Admin') {
+      return true;
+    }
+
+    return !userRole;
+  }
+
+  isLoggedIn() {
+    const payLoad = JSON.parse(window.atob(localStorage.getItem('token').split('.')[1]));
+    const userRole = payLoad.role;
+    if (userRole === 'Admin' || userRole === 'Customer') {
       return true;
     }
 

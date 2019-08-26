@@ -9,19 +9,19 @@ import { HttpClient } from '@angular/common/http';
 export class OrdersServices {
   formData: Orders;
   list: Orders[];
-  // readonly rootUrl = 'https://localhost:44318/api';
-  readonly rootUrl = 'https://localhost:5001/api';
+  readonly rootUrl = 'https://localhost:44318/api';
+  // readonly rootUrl = 'https://localhost:5001/api';
 
 
   constructor(private http: HttpClient) { }
 
   editOrders(formData: Orders) {
-    return this.http.put(this.rootUrl + '/Orders/' + formData.OrderId, formData)
+    return this.http.put(this.rootUrl + '/Orders/' + formData.OrderId, formData);
   }
 
   refreshList() {
     this.http.get(this.rootUrl + '/Orders')
-      .toPromise().then(res => { this.list = res as Orders[] })
+      .toPromise().then(res => { this.list = res as Orders[] });
   }
 
 }

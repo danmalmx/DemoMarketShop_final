@@ -1,6 +1,6 @@
 export class Orders {
     OrderId: number;
-    OrderShipName: string
+    OrderShipName: string;
     OrderStreetAddress: string;
     OrderCity: string;
     OrderCountry: string;

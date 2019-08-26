@@ -8,7 +8,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ReactiveFormsModule, FormsModule } from "@angular/forms";
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -30,7 +30,7 @@ import { UserService } from './shared/user.service';
 import { LoginComponent } from './user/login/login.component';
 import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
 import { ForbiddenComponent } from './admin/forbidden/forbidden.component';
-import { OrdersServices } from "./shared/orders.service";
+import { OrdersServices } from './shared/orders.service';
 
 @NgModule({
   declarations: [
