@@ -20,12 +20,20 @@ export class OrdersServices {
   }
 
   editOrders(formData: Orders) {
-    return this.http.put(this.rootUrl + '/Orders/' + formData.OrderId, formData);
+    return this.http.put(this.rootUrl + '/Orders/' + formData.OrderId, formData );
   }
+
+  // putPaymentDetail() {
+  //   return this.http.put(this.rootUrl + '/Orders/' + this.formData.OrderId, this.formData );
+  // }
 
   refreshList() {
     this.http.get(this.rootUrl + '/Orders')
-      .toPromise().then(res => { this.list = res as Orders[] });
+      .toPromise().then(res => { this.list = res as Orders[]; });
+  }
+
+  deleteOrder(id: number) {
+    return this.http.delete(this.rootUrl + '/Orders/' + id);
   }
 
 }

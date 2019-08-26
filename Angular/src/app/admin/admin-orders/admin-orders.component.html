@@ -1,11 +1,14 @@
+<div class="container">
+
+
 <div class="jumbotron">
   <h1 class="display-4 text-center">
     Orders
   </h1>
   <hr>
-  <div class="row">
-    <div class="col-md-2">
-      <form #form="ngForm" (submit)="onSubmit()" autocomplete="off">
+  <div class="row">  </div>
+    <div class="col-md-12">
+      <form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
         <div class="form-group">
           <label>Order Id</label>
           <input name="OrderId" #OrderId="ngModel" [(ngModel)]="service.formData.OrderId" class="form-control" required>
@@ -40,11 +43,11 @@
           <input name="CustomerId" #CustomerId="ngModel" [(ngModel)]="service.formData.CustomerId" class="form-control">
         </div>
         <div class="form-group">
-          <button (submit)="onSubmit()" type="submit" class="btn btn-info btn-lg btn-block" [disabled]="form.invalid">Change order</button>
+          <button type="submit" class="btn btn-info btn-lg btn-block" [disabled]="form.invalid">Change order</button>
         </div>
       </form>
     </div>
-    <div class="col-md-10">
+    <div class="col-md-12">
       <table class="table table-hover">
         <tr *ngFor="let ord of service.list">
           <td (click)="populateForm(ord)"><strong>Order Id</strong> {{ord.OrderId}}</td>
@@ -54,10 +57,11 @@
           <td (click)="populateForm(ord)">Order Order Country: {{ord.OrderCountry}}</td>
           <td (click)="populateForm(ord)">Customer Id: {{ord.CustomerId}}</td>
           <td (click)="populateForm(ord)">Customer Id: {{ord.CustomerId}}</td>
-          <td><i class="fa fa-trash fa-2x text-danger"></i></td>
+          <td><i (click)="onDelete(ord.OrderId)" class="fa fa-trash fa-2x text-danger"></i></td>
         </tr>
       </table>
     </div>
-  </div>
+
+</div>
 
 </div>

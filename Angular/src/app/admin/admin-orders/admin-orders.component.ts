@@ -34,34 +34,35 @@ export class AdminOrdersComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    if (form.value.OrderId == null) {
-      this.insertRecord(form);
-    } else {
-      this.insertRecord(form);
-      this.service.refreshList();
+    if (confirm('Do you wan to update the order?')) {
+      if (form.value.OrderId == null) {
+        this.insertRecord(form);
+      } else {
+        this.insertRecord(form);
+        this.service.refreshList();
+      }
     }
-
   }
+
   insertRecord(form: NgForm) {
     this.service.editOrders(form.value).subscribe(
       res => {
         this.toastr.success('Order updated', 'Successful submission');
         this.resetForm(form);
         this.service.refreshList();
-
       })
   }
-
-  // updateRecord(form: NgForm) {
-  //   this.service.editOrders(form.value).subscribe(
-  //     res => {
-  //       this.toastr.success('Order updated', 'Successful submission'),
-  //         this.resetForm(form)
-  //     })
-  // }
-
   populateForm(ord: Orders) {
     this.service.formData = Object.assign({}, ord);
+  }
+
+  onDelete(id: number){
+    if (confirm('Are you sure you want to delete?')) {
+      this.service.deleteOrder(id).subscribe(res => {
+        this.service.refreshList();
+        this.toastr.info('Order deleted', 'Successfull deletion');
+      });
+    }
   }
 
 }
