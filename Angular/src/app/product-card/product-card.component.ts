@@ -1,7 +1,8 @@
+import { ProductService } from './../shared/product.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { Product } from '../shared/product.model';
 import { ShoppingCartService } from '../shared/shopping-cart.service';
-import { ShoppingCart } from '../shared/shopping-cart.model';
+import { ShoppingCart, ResponseShoppingCart } from '../shared/shopping-cart.model';
 import { HttpBackend } from '@angular/common/http';
 
 @Component({
@@ -12,25 +13,18 @@ import { HttpBackend } from '@angular/common/http';
 
 export class ProductCardComponent implements OnInit {
   @Input('product') product: Product;
-  obj = new ShoppingCart();
   list: ShoppingCart[];
 
-  constructor(private CartService: ShoppingCartService) { }
+  constructor(private shoppingCartService: ShoppingCartService, private prodService: ProductService) { }
 
   ngOnInit() { }
 
   getAll() {
-    this.CartService.getAll().subscribe(res => this.list = res);
+    this.shoppingCartService.getAll().subscribe(res => this.list = res);
     console.log('I getAll');
   }
 
   addToCart(product: Product) {
-    let cartId = localStorage.getItem('cartId');
-    if(!cartId) {
-      this.obj.DateCreated = new Date();
-      this.obj.ProductName = 'Kalle Anka';
-      this.CartService.create(this.obj);
-      console.log('I componenten!!');
-    }
+    this.shoppingCartService.addToCart(product);
   }
 }
