@@ -3,6 +3,7 @@ import { OrdersServices } from 'src/app/shared/orders.service';
 import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { Orders } from 'src/app/shared/orders.model';
+import { UserService } from 'src/app/shared/user.service';
 
 @Component({
   selector: 'app-admin-orders',
@@ -12,10 +13,13 @@ import { Orders } from 'src/app/shared/orders.model';
 export class AdminOrdersComponent implements OnInit {
 
   constructor(private service: OrdersServices, private toastr: ToastrService, ) { }
+  hide: boolean;
+  form: NgForm;
 
   ngOnInit() {
     this.service.refreshList();
     this.resetForm();
+    this.hide = false;
   }
 
   resetForm(form?: NgForm) {
@@ -34,31 +38,17 @@ export class AdminOrdersComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    if (form.value.OrderId == null) {
-      this.insertRecord(form);
-    } else {
       this.updateRecord(form);
       this.service.refreshList();
-    }
-  }
-
-  insertRecord(form: NgForm) {
-    if (confirm('Are you sure you want to create an order?')) {
-      this.service.postOrders(form.value).subscribe(
-        res => {
-          this.toastr.success('Order Created', 'Successful order creation');
-          this.resetForm(form);
-          this.service.refreshList();
-        })
-    }
   }
 
   updateRecord(form: NgForm) {
     if (confirm('Are you sure you want to update the order?')) {
       this.service.editOrders(form.value).subscribe(
         res => {
-          this.toastr.info('Order update', 'Successful order update');
+          this.toastr.info('Order updated', 'Successful order update');
           this.resetForm(form);
+          this.hide = false;
           this.service.refreshList();
         })
     }
@@ -75,5 +65,4 @@ export class AdminOrdersComponent implements OnInit {
       });
     }
   }
-
 }

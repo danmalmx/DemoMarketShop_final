@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
         // tslint:disable-next-line: no-unused-expression
         token;
         this.toastr.success('You are signed in', 'Successfull signin', { timeOut: 2000 } );
-        this.router.navigate(['']);
+        this.router.navigate(['/products/products']);
       },
       err => {
         if (err.status === 400) {

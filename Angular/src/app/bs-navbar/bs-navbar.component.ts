@@ -10,8 +10,12 @@ import { Router } from '@angular/router';
 export class BsNavbarComponent implements OnInit {
 
   constructor(private router: Router, private service: UserService) { }
+  user: any;
+  name = this.service.formModel.value.UserName;
 
-  ngOnInit() {
+  ngOnInit() {    
+    this.user = this.name;
+    console.log(this.name);
   }
 
   onLogout() {

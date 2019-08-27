@@ -6,4 +6,5 @@ export class Orders {
     OrderCountry: string;
     OrderTrackingNumber: string;
     CustomerId: number;
+    hide?: boolean;
 }

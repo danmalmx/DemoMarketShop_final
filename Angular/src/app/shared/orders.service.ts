@@ -9,13 +9,14 @@ import { HttpClient } from '@angular/common/http';
 export class OrdersServices {
   formData: Orders;
   list: Orders[];
-  // readonly rootUrl = 'https://localhost:44318/api';
-  readonly rootUrl = 'https://localhost:5001/api';
+  readonly rootUrl = 'https://localhost:44318/api';
+  // readonly rootUrl = 'https://localhost:5001/api';
 
 
   constructor(private http: HttpClient) { }
 
   postOrders(formData: Orders) {
+    console.log("Hello", formData)
     return this.http.post(this.rootUrl + '/Orders', formData);
   }
 

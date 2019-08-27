@@ -1,66 +1,65 @@
-<div class="container">
-
-
-  <div class="jumbotron">
-    <h1 class="display-4 text-center">
-      Orders
-    </h1>
-    <hr>
-    <div class="row"> </div>
-    <div class="col-md-12">
-      <form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
-        <div class="form-group">
-          <label>Order Id</label>
-          <input name="OrderId" #OrderId="ngModel" [(ngModel)]="service.formData.OrderId" class="form-control" required>
-          <div class="validation-error" *ngIf="OrderId.invalid && OrderId.touched">This field is required</div>
-        </div>
-        <div class="form-group">
-          <label>Order Ship Name</label>
-          <input name="OrderShipName" #OrderShipName="ngModel" [(ngModel)]="service.formData.OrderShipName"
-            class="form-control">
-        </div>
-        <div class="form-group">
-          <label>Order Street Address</label>
-          <input name="OrderStreetAddress" #OrderStreetAddress="ngModel"
-            [(ngModel)]="service.formData.OrderStreetAddress" class="form-control">
-        </div>
-        <div class="form-group">
-          <label>Order City</label>
-          <input name="OrderCity" #OrderCity="ngModel" [(ngModel)]="service.formData.OrderCity" class="form-control">
-        </div>
-        <div class="form-group">
-          <label>Order Country</label>
-          <input name="OrderCountry" #OrderCountry="ngModel" [(ngModel)]="service.formData.OrderCountry"
-            class="form-control">
-        </div>
-        <div class="form-group">
-          <label>Order Tracking Number</label>
-          <input name="OrderTrackingNumber" #OrderTrackingNumber="ngModel"
-            [(ngModel)]="service.formData.OrderTrackingNumber" class="form-control">
-        </div>
-        <div class="form-group">
-          <label>Customer Id</label>
-          <input name="CustomerId" #CustomerId="ngModel" [(ngModel)]="service.formData.CustomerId" class="form-control">
-        </div>
-        <div class="form-group">
-          <button type="submit" class="btn btn-info btn-lg btn-block" [disabled]="form.invalid">Change order</button>
-        </div>
-      </form>
+  <!-- <div class="jumbotron"> -->
+    <div class="container">
+    <div class="text-center col-md-10">
+      <h1 class="display-4" >Orders</h1>
+      <p>Click on an order to edit it</p>
     </div>
-    <div class="col-md-12">
-      <table class="table table-hover">
-        <tr *ngFor="let ord of service.list">
-          <td (click)="populateForm(ord)"><strong>Order Id</strong> {{ord.OrderId}}</td>
-          <td (click)="populateForm(ord)">Order Ship Name: {{ord.OrderShipName}}</td>
-          <td (click)="populateForm(ord)">Order Street Address: {{ord.OrderStreetAddress}}</td>
-          <td (click)="populateForm(ord)">Order City: {{ord.OrderCity}}</td>
-          <td (click)="populateForm(ord)">Order Order Country: {{ord.OrderCountry}}</td>
-          <td (click)="populateForm(ord)">Customer Id: {{ord.CustomerId}}</td>
-          <td><i (click)="onDelete(ord.OrderId)" class="fa fa-trash fa-2x text-danger"></i></td>
-        </tr>
-      </table>
-    </div>
-
   </div>
+    <hr>
+    <ng-container *ngIf="hide">
+      <div class="col-md-10">
+        <form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+          <div class="form-group" >
+            <label>Order Id</label>
+            <input name="OrderId" #OrderId="ngModel" [(ngModel)]="service.formData.OrderId" class="form-control" required >
+            <div class="validation-error" *ngIf="OrderId.invalid && OrderId.touched">This field is required</div>
+          </div>
+          <div class="form-group" *ngIf="hide">
+            <label (click)="this.hide= !this.hide">Order Ship Name</label>
+            <input  name="OrderShipName" #OrderShipName="ngModel" [(ngModel)]="service.formData.OrderShipName"
+              class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Order Street Address</label>
+            <input name="OrderStreetAddress" #OrderStreetAddress="ngModel"
+              [(ngModel)]="service.formData.OrderStreetAddress" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Order City</label>
+            <input name="OrderCity" #OrderCity="ngModel" [(ngModel)]="service.formData.OrderCity" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Order Country</label>
+            <input name="OrderCountry" #OrderCountry="ngModel" [(ngModel)]="service.formData.OrderCountry"
+              class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Order Tracking Number</label>
+            <input name="OrderTrackingNumber" #OrderTrackingNumber="ngModel"
+              [(ngModel)]="service.formData.OrderTrackingNumber" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Customer Id</label>
+            <input name="CustomerId" #CustomerId="ngModel" [(ngModel)]="service.formData.CustomerId" class="form-control">
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-info btn-lg btn-block" [disabled]="form.invalid">Change order</button>
+          </div>
+        </form>
+      </div>
+    </ng-container>
+      <div class="col-md-10">
+        <table class="table table-hover">
+          <tr *ngFor="let ord of service.list">
+            <td (click)="populateForm(ord)" (click)="this.hide= !this.hide"><strong>Order Id</strong> {{ord.OrderId}}</td>
+            <td (click)="populateForm(ord)" (click)="this.hide= !this.hide">Order Ship Name: {{ord.OrderShipName}}</td>
+            <td (click)="populateForm(ord)" (click)="this.hide= !this.hide">Order Street Address: {{ord.OrderStreetAddress}}</td>
+            <td (click)="populateForm(ord)" (click)="this.hide= !this.hide">Order City: {{ord.OrderCity}}</td>
+            <td (click)="populateForm(ord)" (click)="this.hide= !this.hide">Order Order Country: {{ord.OrderCountry}}</td>
+            <td (click)="populateForm(ord)"(click)="this.hide= !this.hide">Customer Id: {{ord.CustomerId}}</td>
+            <td><i (click)="onDelete(ord.OrderId)" class="fa fa-trash text-danger"></i></td>
+          </tr>
+        </table>
+      </div>
 
-</div>
+  <!-- </div> -->
