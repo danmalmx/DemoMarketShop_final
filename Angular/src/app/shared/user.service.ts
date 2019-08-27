@@ -1,8 +1,6 @@
-import { AuthGuard } from './../auth/auth.guard';
 import { Injectable } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +9,8 @@ export class UserService {
 
   constructor(private fb: FormBuilder, private http: HttpClient) { }
 
-  // readonly rootUrl = 'https://localhost:5001/api';
-  readonly BaseUri = 'https://localhost:44318/api';
+  readonly rootUrl = 'https://localhost:5001/api';
+  // readonly rootUrl = 'https://localhost:44318/api';
 
 
   formModel = this.fb.group({
@@ -44,11 +42,11 @@ export class UserService {
       FullName: this.formModel.value.FullName,
       Password: this.formModel.value.Passwords.Password
     };
-    return this.http.post(this.BaseUri + '/ApplicationUser/Register', body);
+    return this.http.post(this.rootUrl + '/ApplicationUser/Register', body);
   }
 
   login(formData) {
-    return this.http.post(this.BaseUri + '/ApplicationUser/Login', formData);
+    return this.http.post(this.rootUrl + '/ApplicationUser/Login', formData);
   }
 
   isAdminLoggedIn() {

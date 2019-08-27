@@ -34,29 +34,40 @@ export class AdminOrdersComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    if (confirm('Do you wan to update the order?')) {
-      if (form.value.OrderId == null) {
-        this.insertRecord(form);
-      } else {
-        this.insertRecord(form);
-        this.service.refreshList();
-      }
+    if (form.value.OrderId == null) {
+      this.insertRecord(form);
+    } else {
+      this.updateRecord(form);
+      this.service.refreshList();
     }
   }
 
   insertRecord(form: NgForm) {
-    this.service.editOrders(form.value).subscribe(
-      res => {
-        this.toastr.success('Order updated', 'Successful submission');
-        this.resetForm(form);
-        this.service.refreshList();
-      })
+    if (confirm('Are you sure you want to create an order?')) {
+      this.service.postOrders(form.value).subscribe(
+        res => {
+          this.toastr.success('Order Created', 'Successful order creation');
+          this.resetForm(form);
+          this.service.refreshList();
+        })
+    }
+  }
+
+  updateRecord(form: NgForm) {
+    if (confirm('Are you sure you want to update the order?')) {
+      this.service.editOrders(form.value).subscribe(
+        res => {
+          this.toastr.info('Order update', 'Successful order update');
+          this.resetForm(form);
+          this.service.refreshList();
+        })
+    }
   }
   populateForm(ord: Orders) {
     this.service.formData = Object.assign({}, ord);
   }
 
-  onDelete(id: number){
+  onDelete(id: number) {
     if (confirm('Are you sure you want to delete?')) {
       this.service.deleteOrder(id).subscribe(res => {
         this.service.refreshList();

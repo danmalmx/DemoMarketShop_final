@@ -9,8 +9,8 @@ import { HttpClient } from '@angular/common/http';
 export class OrdersServices {
   formData: Orders;
   list: Orders[];
-  readonly rootUrl = 'https://localhost:44318/api';
-  // readonly rootUrl = 'https://localhost:5001/api';
+  // readonly rootUrl = 'https://localhost:44318/api';
+  readonly rootUrl = 'https://localhost:5001/api';
 
 
   constructor(private http: HttpClient) { }
@@ -20,12 +20,8 @@ export class OrdersServices {
   }
 
   editOrders(formData: Orders) {
-    return this.http.put(this.rootUrl + '/Orders/' + formData.OrderId, formData );
+    return this.http.put(this.rootUrl + '/Orders/' + formData.OrderId, formData);
   }
-
-  // putPaymentDetail() {
-  //   return this.http.put(this.rootUrl + '/Orders/' + this.formData.OrderId, this.formData );
-  // }
 
   refreshList() {
     this.http.get(this.rootUrl + '/Orders')

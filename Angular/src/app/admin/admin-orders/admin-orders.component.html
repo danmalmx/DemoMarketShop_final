@@ -1,12 +1,12 @@
 <div class="container">
 
 
-<div class="jumbotron">
-  <h1 class="display-4 text-center">
-    Orders
-  </h1>
-  <hr>
-  <div class="row">  </div>
+  <div class="jumbotron">
+    <h1 class="display-4 text-center">
+      Orders
+    </h1>
+    <hr>
+    <div class="row"> </div>
     <div class="col-md-12">
       <form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
         <div class="form-group">
@@ -56,12 +56,11 @@
           <td (click)="populateForm(ord)">Order City: {{ord.OrderCity}}</td>
           <td (click)="populateForm(ord)">Order Order Country: {{ord.OrderCountry}}</td>
           <td (click)="populateForm(ord)">Customer Id: {{ord.CustomerId}}</td>
-          <td (click)="populateForm(ord)">Customer Id: {{ord.CustomerId}}</td>
           <td><i (click)="onDelete(ord.OrderId)" class="fa fa-trash fa-2x text-danger"></i></td>
         </tr>
       </table>
     </div>
 
-</div>
+  </div>
 
 </div>
