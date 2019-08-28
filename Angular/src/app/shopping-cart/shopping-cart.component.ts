@@ -1,3 +1,6 @@
+import { Product } from './../shared/product.model';
+import { ShoppingCartService } from './../shared/shopping-cart.service';
+import { ShoppingCart } from './../shared/shopping-cart.model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShoppingCartComponent implements OnInit {
 
-  constructor() { }
+  constructor(private shoppingCartService: ShoppingCartService) { }
 
   ngOnInit() {
   }
 
 }
+
+
