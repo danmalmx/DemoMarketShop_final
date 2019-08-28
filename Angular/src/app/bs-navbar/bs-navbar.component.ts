@@ -10,18 +10,16 @@ import { Router } from '@angular/router';
 export class BsNavbarComponent implements OnInit {
 
   constructor(private router: Router, private service: UserService) { }
-  user: any;
-  UserName: any;
-
+  setName: any = this.service.name;
+  username: any;
 
   ngOnInit() {
-    this.user = this.service.hasUserName();
+    this.username = this.setName.user;
   }
 
   onLogout() {
     localStorage.removeItem('token');
     this.router.navigate(['/user/login']);
   }
-
 
 }

@@ -8,6 +8,8 @@ import { HttpClient } from '@angular/common/http';
 export class UserService {
 
   constructor(private fb: FormBuilder, private http: HttpClient) { }
+  body: any;
+  user: any;
 
   readonly rootUrl = 'https://localhost:5001/api';
   // readonly rootUrl = 'https://localhost:44318/api';
@@ -36,21 +38,21 @@ export class UserService {
   }
 
   register() {
-    const body = {
+    this.body = {
       UserName: this.formModel.value.UserName,
       Email: this.formModel.value.Email,
       FullName: this.formModel.value.FullName,
       Password: this.formModel.value.Passwords.Password
     };
-    return this.http.post(this.rootUrl + '/ApplicationUser/Register', body);
+    return this.http.post(this.rootUrl + '/ApplicationUser/Register', this.body);
   }
 
   login(formData) {
     return this.http.post(this.rootUrl + '/ApplicationUser/Login', formData);
   }
 
-  name(formData) {
-    return this.http.get(this.rootUrl + '/UserProfile', formData.UserName);
+  name() {
+    this.user = this.http.get(this.rootUrl + '/UserProfile');
   }
 
   isAdminLoggedIn() {
@@ -61,11 +63,6 @@ export class UserService {
     }
 
     return !userRole;
-  }
-  hasUserName() {
-    const payLoad = JSON.parse(window.atob(localStorage.getItem('token').split('.')[1]));
-    const userName = payLoad.UserName;
-    return userName;;
   }
 
   isLoggedIn() {
