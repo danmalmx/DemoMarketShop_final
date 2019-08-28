@@ -46,7 +46,7 @@ export class AdminOrdersComponent implements OnInit {
     if (confirm('Are you sure you want to update the order?')) {
       this.service.editOrders(form.value).subscribe(
         res => {
-          this.toastr.info('Order updated', 'Successful order update');
+          this.toastr.info('Order updated', '');
           this.resetForm(form);
           this.hide = false;
           this.service.refreshList();
@@ -61,7 +61,7 @@ export class AdminOrdersComponent implements OnInit {
     if (confirm('Are you sure you want to delete?')) {
       this.service.deleteOrder(id).subscribe(res => {
         this.service.refreshList();
-        this.toastr.info('Order deleted', 'Successfull deletion');
+        this.toastr.info('Order deleted', '');
       });
     }
   }

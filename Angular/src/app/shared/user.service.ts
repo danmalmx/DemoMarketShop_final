@@ -9,8 +9,8 @@ export class UserService {
 
   constructor(private fb: FormBuilder, private http: HttpClient) { }
 
-  // readonly rootUrl = 'https://localhost:5001/api';
-  readonly rootUrl = 'https://localhost:44318/api';
+  readonly rootUrl = 'https://localhost:5001/api';
+  // readonly rootUrl = 'https://localhost:44318/api';
 
 
   formModel = this.fb.group({
@@ -49,6 +49,10 @@ export class UserService {
     return this.http.post(this.rootUrl + '/ApplicationUser/Login', formData);
   }
 
+  name(formData) {
+    return this.http.get(this.rootUrl + '/UserProfile', formData.UserName);
+  }
+
   isAdminLoggedIn() {
     const payLoad = JSON.parse(window.atob(localStorage.getItem('token').split('.')[1]));
     const userRole = payLoad.role;
@@ -57,6 +61,11 @@ export class UserService {
     }
 
     return !userRole;
+  }
+  hasUserName() {
+    const payLoad = JSON.parse(window.atob(localStorage.getItem('token').split('.')[1]));
+    const userName = payLoad.UserName;
+    return userName;;
   }
 
   isLoggedIn() {

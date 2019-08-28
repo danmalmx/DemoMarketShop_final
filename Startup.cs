@@ -43,10 +43,10 @@ namespace DemoMarketShopSprinta
             });
 
             services.AddDbContext<ShopContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
+            options.UseSqlServer(Configuration.GetConnectionString("MacConnection")));
 
             //Identity / Authentication injection
-            services.AddDbContext<AuthenticationContext>(option => option.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
+            services.AddDbContext<AuthenticationContext>(option => option.UseSqlServer(Configuration.GetConnectionString("MacConnection")));
 
             //Adding Identity 
             services.AddDefaultIdentity<ApplicationUser>()

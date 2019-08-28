@@ -11,11 +11,11 @@ export class BsNavbarComponent implements OnInit {
 
   constructor(private router: Router, private service: UserService) { }
   user: any;
-  name = this.service.formModel.value.UserName;
+  UserName: any;
 
-  ngOnInit() {    
-    this.user = this.name;
-    console.log(this.name);
+
+  ngOnInit() {
+    this.user = this.service.hasUserName();
   }
 
   onLogout() {
