@@ -11,18 +11,31 @@ import { HttpBackend } from '@angular/common/http';
   styleUrls: ['./product-card.component.css']
 })
 
-export class ProductCardComponent {
+export class ProductCardComponent implements OnInit{
   @Input('product') product: Product;
+  @Input('shopping-cart') ShoppingCart;
   list: ShoppingCart[];
   shopList: ShoppingCart[];
+  shopList2: ShoppingCart[];
   obj = new ShoppingCart();
   returnObj: ShoppingCart;
   newShopObj = new ShoppingCart();
   isInShop = false;
+  quantityShop: number;
+  tempObj = new Product();
+  tempNumber: number;
+
 
   constructor(private shoppingCartService: ShoppingCartService, private prodService: ProductService) { }
 
+  ngOnInit() { }
+
+  async showOnInit() {
+    return 123;
+  }
+
   async addToCart(product: Product) {
+    let returnValue = 0;
     let cartId = this.shoppingCartService.getOrCreateCartId();
     let inProduct = product.ProductId;
     await this.shoppingCartService.returnAllProdInShoppingCart()
@@ -35,6 +48,8 @@ export class ProductCardComponent {
     this.shopList.forEach(element => {
       if (element.ShoppingCartId === cartId && element.ProductId === inProduct) {
         element.Quantity += 1;
+        returnValue = element.Quantity;
+        this.quantityShop = returnValue;
         this.shoppingCartService.updateQuantityWithOne(element.Id, element).subscribe((res: any) => this.obj = res);
         this.isInShop = true;
         }});
@@ -45,5 +60,7 @@ export class ProductCardComponent {
       this.newShopObj.Quantity = 1;
       this.shoppingCartService.create(this.newShopObj).subscribe(res => this.obj = res);
     }
+    // console.log("ReturnValue: " + returnValue);
+    return returnValue;
   }
 }

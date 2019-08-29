@@ -2,8 +2,9 @@
     <img src="{{ product.ProductImage }}" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">{{ product.ProductName }}</h5>
-      <p class="card-text">{{ product.ProductDescription }}</p>
+      <p class="card-text">{{ product.ProductDescription }}: {{ product.ProductPrice }}kr</p>
     </div>
+    <div>{{ quantityShop }}</div>
     <div class="card-footer">
         <button (click)="addToCart(product)" class="btn btn-primary btn-block">Add to Cart</button>
     </div>
