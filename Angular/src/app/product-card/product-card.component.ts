@@ -45,10 +45,13 @@ export class ProductCardComponent implements OnInit {
         tempCartId = element.Quantity;
       }
     });
+    if (tempCartId > 0) {
     return tempCartId;
+    }
+    return 0;
   }
 
-  async addToCart(product: Product) {
+  async addToCart(product: Product, change: number) {
     let returnValue = 0;
     let cartId = this.shoppingCartService.getOrCreateCartId();
     let inProduct = product.ProductId;
@@ -61,7 +64,7 @@ export class ProductCardComponent implements OnInit {
 
     this.shopList.forEach(element => {
       if (element.ShoppingCartId === cartId && element.ProductId === inProduct) {
-        element.Quantity += 1;
+        element.Quantity += change;
         returnValue = element.Quantity;
         this.quantityShop = returnValue;
         this.shoppingCartService.updateQuantityWithOne(element.Id, element).subscribe((res: any) => this.obj = res);
@@ -71,7 +74,8 @@ export class ProductCardComponent implements OnInit {
     if (!this.isInShop) {
       this.newShopObj.ShoppingCartId = cartId;
       this.newShopObj.ProductId = inProduct;
-      this.newShopObj.Quantity = 1;
+      this.newShopObj.Quantity = change;
+      this.quantityShop = change;
       this.shoppingCartService.create(this.newShopObj).subscribe(res => this.obj = res);
     }
     // console.log("ReturnValue: " + returnValue);
