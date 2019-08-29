@@ -1,13 +1,29 @@
 .navbar{
     cursor: pointer;
+
+}
+/* .navbar {
+    display: flex;
 }
 
-.navbar-nav {
+.collapse {
+    display:flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.collapse ul {
+   float: right;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.collapse ul {
+    display:flex;
+} */
+
+/* #navbarsExampleDefault {
     display:flex;
     justify-content: space-between;
     flex-direction: row;
     z-index: 1;
-}
-.navbar-nav ul {
-    display: flex;
-}
+} */
