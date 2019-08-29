@@ -1,9 +1,10 @@
 import { Product } from './../shared/product.model';
 import { ProductService } from './../shared/product.service';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { ShoppingCartService } from '../shared/shopping-cart.service';
 import { ShoppingCart, ResponseShoppingCart } from '../shared/shopping-cart.model';
 import { HttpBackend } from '@angular/common/http';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'product-card',
@@ -11,7 +12,7 @@ import { HttpBackend } from '@angular/common/http';
   styleUrls: ['./product-card.component.css']
 })
 
-export class ProductCardComponent implements OnInit{
+export class ProductCardComponent implements OnInit {
   @Input('product') product: Product;
   @Input('shopping-cart') ShoppingCart;
   list: ShoppingCart[];
@@ -24,14 +25,27 @@ export class ProductCardComponent implements OnInit{
   quantityShop: number;
   tempObj = new Product();
   tempNumber: number;
-
+  tempVar: ShoppingCart[];
 
   constructor(private shoppingCartService: ShoppingCartService, private prodService: ProductService) { }
 
-  ngOnInit() { }
+  async ngOnInit() { // Lite för snabb för nästa method när listan används :: ATT FIXA!!
+    (await this.shoppingCartService.returnAllProdInShoppingCart())
+      .subscribe(res => this.shopList2 = res);
+  }
 
-  async showOnInit() {
-    return 123;
+  showOnInit(product: Product) {
+    let cartId = this.shoppingCartService.getOrCreateCartId();
+    let tempCartId: number;
+    this.shopList2.forEach(element => {
+      if (cartId === element.ShoppingCartId && product.ProductId === element.ProductId) {
+        // console.log("ShoppingCartId: " + element.ShoppingCartId);
+        // console.log("ProductId: " + element.ProductId);
+        // console.log("Quantity: " + element.Quantity);
+        tempCartId = element.Quantity;
+      }
+    });
+    return tempCartId;
   }
 
   async addToCart(product: Product) {

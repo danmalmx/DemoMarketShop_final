@@ -7,10 +7,10 @@
             <a
             class="list-group-item list-group-item-action"
             [class.active]="!category"
-            routerLink="/"
+            routerLink="/products/products"
             >All Categories</a>
             <a *ngFor="let c of categories$ | async"
-            routerLink="/"
+            routerLink="/products/products"
             [queryParams]="{ category: c.CategoryName }"
             class="list-group-item list-group-item-action"
             [class.active]="category === c.CategoryName">

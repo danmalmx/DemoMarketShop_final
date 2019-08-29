@@ -4,7 +4,7 @@
       <h5 class="card-title">{{ product.ProductName }}</h5>
       <p class="card-text">{{ product.ProductDescription }}: {{ product.ProductPrice }}kr</p>
     </div>
-    <div>{{ quantityShop }}</div>
+    <div> {{ quantityShop }} {{ showOnInit(product) }}</div>
     <div class="card-footer">
         <button (click)="addToCart(product)" class="btn btn-primary btn-block">Add to Cart</button>
     </div>
