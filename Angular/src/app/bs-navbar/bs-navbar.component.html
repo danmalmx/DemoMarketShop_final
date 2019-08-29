@@ -13,8 +13,7 @@
 
       <li ngbDropdown class="nav-item dropdown">
         <a ngbDropdownToggle class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false" ng-controller="register">Hello
-          {{username}}</a>
+          aria-haspopup="true" aria-expanded="false" ng-controller="register"> Hello {{ username }}</a>
         <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
       <li *ngIf="!service.isLoggedIn()"><a class="dropdown-item" routerLink="/user/login">LogIn</a></li>
       <li *ngIf="!service.isAdminLoggedIn()"><a class="dropdown-item" routerLink="/products/products">Products</a></li>
@@ -26,12 +25,6 @@
       </li>
       <li *ngIf="service.isLoggedIn()"><a class="dropdown-item" (click)="onLogout()" routerLink="/user/login">Logout</a>
       </li>
-
-      <!--
-        <ul *ngIf="showAdmin">
-          <a class="dropdown-item" routerLink="/admin/orders">Manage Orders</a>
-          <a class="dropdown-item" routerLink="/admin/products">Manage Products</a>
-          </ul> -->
   </div>
   </li>
   </ul>

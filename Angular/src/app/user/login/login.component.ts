@@ -27,9 +27,8 @@ export class LoginComponent implements OnInit {
     this.service.login(form.value).subscribe(
       (res: any) => {
         const token = localStorage.setItem('token', res.token);
-        // tslint:disable-next-line: no-unused-expression
-        token;
-        this.toastr.success('You are signed in', '', { timeOut: 2000 });
+
+        this.toastr.success('You are signed in', '', { timeOut: 2000 });     
         this.router.navigate(['/products/products']);
       },
       err => {

@@ -1,18 +1,19 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  constructor(private fb: FormBuilder, private http: HttpClient) { }
+  constructor(private fb: FormBuilder, public http: HttpClient) { }
   body: any;
   user: any;
 
-  readonly rootUrl = 'https://localhost:5001/api';
-  // readonly rootUrl = 'https://localhost:44318/api';
+  // readonly rootUrl = 'https://localhost:5001/api';
+  readonly rootUrl = 'https://localhost:44318/api';
 
 
   formModel = this.fb.group({
@@ -44,6 +45,7 @@ export class UserService {
       FullName: this.formModel.value.FullName,
       Password: this.formModel.value.Passwords.Password
     };
+
     return this.http.post(this.rootUrl + '/ApplicationUser/Register', this.body);
   }
 
@@ -52,7 +54,7 @@ export class UserService {
   }
 
   name() {
-    this.user = this.http.get(this.rootUrl + '/UserProfile');
+    return this.http.get(this.rootUrl + '/UserProfile');
   }
 
   isAdminLoggedIn() {
@@ -87,4 +89,15 @@ export class UserService {
     });
     return isMatch;
   }
+public connectServer() {
+    this.http.get(this.rootUrl + '/UserProfile')
+      .subscribe(
+        user => user,  
+        err => console.log(err)
+        );
+  }
+
+  // public getGraph() : Observable<{name: string}[]> {
+  //   return this.http.get<{name: string}[]>(this.rootUrl + '/UserProfile');
+  // }
 }

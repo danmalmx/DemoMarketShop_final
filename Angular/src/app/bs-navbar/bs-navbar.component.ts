@@ -10,11 +10,15 @@ import { Router } from '@angular/router';
 export class BsNavbarComponent implements OnInit {
 
   constructor(private router: Router, private service: UserService) { }
-  setName: any = this.service.name;
   username: any;
-
+  
   ngOnInit() {
-    this.username = this.setName.user;
+    // this.username = this.username = this.service.connectServer();
+    console.log(this.username = this.service.connectServer());
+    // return this.username;
+
+    // let username = sessionStorage.getItem('UserName');
+    // console.log(this.username)
   }
 
   onLogout() {

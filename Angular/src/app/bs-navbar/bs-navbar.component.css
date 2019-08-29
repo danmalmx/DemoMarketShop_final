@@ -1,3 +1,13 @@
 .navbar{
     cursor: pointer;
 }
+
+.navbar-nav {
+    display:flex;
+    justify-content: space-between;
+    flex-direction: row;
+    z-index: 1;
+}
+.navbar-nav ul {
+    display: flex;
+}
