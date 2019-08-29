@@ -12940,7 +12940,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Kurs\\.nuget\\packages\\": {},
+    "C:\\Users\\Elev1\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -12949,14 +12949,14 @@
       "projectUniqueName": "C:\\Temp\\DemoMarketShop\\DemoMarketShopSprinta.csproj",
       "projectName": "DemoMarketShopSprinta",
       "projectPath": "C:\\Temp\\DemoMarketShop\\DemoMarketShopSprinta.csproj",
-      "packagesPath": "C:\\Users\\Kurs\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\Elev1\\.nuget\\packages\\",
       "outputPath": "C:\\Temp\\DemoMarketShop\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Kurs\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Elev1\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

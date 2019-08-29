@@ -1,4 +1,3 @@
-import { ProductCardComponent } from './product-card/product-card.component';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -14,6 +13,7 @@ import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ProductCardComponent } from './product-card/product-card.component';
 import { BsNavbarComponent } from './bs-navbar/bs-navbar.component';
 import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
@@ -77,7 +77,7 @@ import { OrdersServices } from './shared/orders.service';
     //   {path:   'admin/orders',component: AdminOrdersComponent}
     // ])
   ],
-  providers: [ProductService, CategoryService, UserService, OrdersServices,  {
+  providers: [ProductService, CategoryService, UserService, OrdersServices, {
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true

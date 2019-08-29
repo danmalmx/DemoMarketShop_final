@@ -16,6 +16,7 @@ export class OrdersServices {
   constructor(private http: HttpClient) { }
 
   postOrders(formData: Orders) {
+    console.log("Hello", formData)
     return this.http.post(this.rootUrl + '/Orders', formData);
   }
 
@@ -25,7 +26,11 @@ export class OrdersServices {
 
   refreshList() {
     this.http.get(this.rootUrl + '/Orders')
-      .toPromise().then(res => { this.list = res as Orders[] });
+      .toPromise().then(res => { this.list = res as Orders[]; });
+  }
+
+  deleteOrder(id: number) {
+    return this.http.delete(this.rootUrl + '/Orders/' + id);
   }
 
 }

@@ -4,6 +4,7 @@ import { CategoryService } from '../shared/category.service';
 import { Product } from './../shared/product.model';
 import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from '../shared/user.service';
 
 @Component({
   selector: 'app-home',
@@ -20,7 +21,9 @@ export class HomeComponent implements OnInit {
   constructor(
     route: ActivatedRoute,
     productService: ProductService,
-    categoryService: CategoryService) {
+    categoryService: CategoryService) 
+    
+    {
       productService.getAll().subscribe(products => this.products = products);
 
       this.categories$ = categoryService.getAll();
