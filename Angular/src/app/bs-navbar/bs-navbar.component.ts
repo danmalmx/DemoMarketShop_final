@@ -13,15 +13,15 @@ export class BsNavbarComponent implements OnInit {
   username: any;
   
   ngOnInit() {
-    // this.username = this.username = this.service.connectServer();
-    console.log(this.username = this.service.connectServer());
-    // return this.username;
+    this.username = sessionStorage.getItem('UserName');
 
-    // let username = sessionStorage.getItem('UserName');
-    // console.log(this.username)
+    // this.username = this.service.connectServer();
+    // console.log(this.username = this.service.connectServer());
+    // return this.username;
   }
 
   onLogout() {
+    sessionStorage.removeItem('UserName');
     localStorage.removeItem('token');
     this.router.navigate(['/user/login']);
   }

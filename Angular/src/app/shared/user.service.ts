@@ -50,6 +50,7 @@ export class UserService {
   }
 
   login(formData) {
+    sessionStorage.setItem('UserName', formData.UserName)
     return this.http.post(this.rootUrl + '/ApplicationUser/Login', formData);
   }
 
@@ -92,8 +93,8 @@ export class UserService {
 public connectServer() {
     this.http.get(this.rootUrl + '/UserProfile')
       .subscribe(
-        user => user,  
-        err => console.log(err)
+        data => sessionStorage.setItem('UserName', data.UserName),
+        err => console.log('err')
         );
   }
 
