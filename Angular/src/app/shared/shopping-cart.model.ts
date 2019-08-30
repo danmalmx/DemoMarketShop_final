@@ -1,7 +1,8 @@
 export class ShoppingCart {
   Id: number;
   ShoppingCartId: number;
-  DateCreated: Date;
+  ProductName: string;
+  ProductPrice: number;
   ProductId: number;
   Quantity: number;
 }
@@ -9,7 +10,8 @@ export class ShoppingCart {
 export interface ResponseShoppingCart {
   Id: number;
   ShoppingCartId: number;
-  DateCreated: Date;
+  ProductName: string;
+  ProductPrice: number;
   ProductId: number;
   Quantity: number;
 }

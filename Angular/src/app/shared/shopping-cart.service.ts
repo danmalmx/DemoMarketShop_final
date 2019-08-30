@@ -1,11 +1,12 @@
 import { element } from 'protractor';
 import { Product } from './product.model';
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ShoppingCart, ResponseShoppingCart } from './shopping-cart.model';
 import { Observable } from 'rxjs';
 import { strictEqual } from 'assert';
 import { SelectMultipleControlValueAccessor } from '@angular/forms';
+import { ConcatSource } from 'webpack-sources';
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +20,25 @@ export class ShoppingCartService {
   shopList: ShoppingCart[];
   returnShopObj: any;
   shopObj: ShoppingCart[];
+  cartList: ShoppingCart[];
+  numberOfItemInShop: number = 0;
 
   constructor(private http: HttpClient) { }
+
+  async returnNumberOfItemsInCart() {
+    const cartId = localStorage.getItem('cartId');
+    let cartIdNumber = parseInt(cartId);
+    await this.http.get<ShoppingCart[]>(this.rootUrl + '/ShoppingCart') // .subscribe(res => this.cartList = res);
+    .toPromise()
+    .then(res => this.cartList = res);
+    this.numberOfItemInShop = 0;
+    this.cartList.forEach(element => {
+      if (cartIdNumber === element.ShoppingCartId) {
+        this.numberOfItemInShop += element.Quantity;
+      }
+    });
+    return this.numberOfItemInShop;
+  }
 
   getAll(): Observable<ShoppingCart[]> {
     return this.http.get<ShoppingCart[]>(this.rootUrl + '/ShoppingCart');
@@ -30,7 +48,7 @@ export class ShoppingCartService {
     return this.http.post<ShoppingCart>(this.rootUrl + '/ShoppingCart', obj);
   }
 
-  getCart(cartId: string) {
+  getCartId(cartId: string) {
     return this.http.get(this.rootUrl + '/ShoppingCart' + cartId);
   }
 

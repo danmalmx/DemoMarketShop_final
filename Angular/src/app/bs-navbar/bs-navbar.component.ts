@@ -20,24 +20,8 @@ export class BsNavbarComponent implements OnInit {
     let cartId = this.shoppingCartService.getOrCreateCartId();
     let cart$ = await this.shoppingCartService.returnAllProdInShoppingCart();
 
-    cart$.subscribe(cart => {
-      console.log("TjooHoo!");
-    })
+    cart$.subscribe(res => this.shopList = res); // Fixa ut antal items i shoppen
   }
-
-  // this.shopList.forEach(element => {
-  //   if (cartId === element.ShoppingCartId) {
-  //     this.shoppingCartItemCount += element.Quantity;
-  //     console.log("----------------------------------------");
-  //     console.log("Från Navbar, cartId: " + cartId);
-  //     console.log("Från Navbar, ShoppingCartId: " + element.ShoppingCartId);
-  //     console.log("Från Navbar, Quantity: " + element.Quantity);
-  //     console.log("Från Navbar, shoppingCartItemCount: " + this.shoppingCartItemCount);
-  //     console.log("----------------------------------------");
-  //   }
-  // });
-
-
 
   onLogout() {
     localStorage.removeItem('token');

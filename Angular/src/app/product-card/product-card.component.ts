@@ -5,6 +5,7 @@ import { ShoppingCartService } from '../shared/shopping-cart.service';
 import { ShoppingCart, ResponseShoppingCart } from '../shared/shopping-cart.model';
 import { HttpBackend } from '@angular/common/http';
 import { Subscription } from 'rxjs';
+import { prependOnceListener } from 'cluster';
 
 @Component({
   selector: 'product-card',
@@ -55,6 +56,8 @@ export class ProductCardComponent implements OnInit {
     let returnValue = 0;
     let cartId = this.shoppingCartService.getOrCreateCartId();
     let inProduct = product.ProductId;
+    let inProdName = product.ProductName;
+    let inProdPrice = product.ProductPrice;
     await this.shoppingCartService.returnAllProdInShoppingCart()
     .toPromise()
     .then(res => this.shopList = res);
@@ -74,6 +77,8 @@ export class ProductCardComponent implements OnInit {
     if (!this.isInShop) {
       this.newShopObj.ShoppingCartId = cartId;
       this.newShopObj.ProductId = inProduct;
+      this.newShopObj.ProductName = inProdName;
+      this.newShopObj.ProductPrice = inProdPrice;
       this.newShopObj.Quantity = change;
       this.quantityShop = change;
       this.shoppingCartService.create(this.newShopObj).subscribe(res => this.obj = res);
