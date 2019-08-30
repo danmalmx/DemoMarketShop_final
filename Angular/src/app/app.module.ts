@@ -7,8 +7,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { ToastrModule } from 'ngx-toastr';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,6 +28,9 @@ import { UserComponent } from './user/user.component';
 import { UserService } from './shared/user.service';
 import { LoginComponent } from './user/login/login.component';
 import { ProductCardComponent } from './product-card/product-card.component';
+import { ProductFormComponent } from './admin/admin-products/product-form/product-form.component';
+import { ProductFormListComponent } from './admin/admin-products/product-form-list/product-form-list.component';
+
 
 @NgModule({
   declarations: [
@@ -44,7 +47,9 @@ import { ProductCardComponent } from './product-card/product-card.component';
     RegistrationComponent,
     UserComponent,
     LoginComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    ProductFormComponent,
+    ProductFormListComponent
   ],
   imports: [
     BrowserModule,
@@ -56,19 +61,21 @@ import { ProductCardComponent } from './product-card/product-card.component';
     MatInputModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    ReactiveFormsModule,
     FormsModule,
-    // RouterModule.forRoot([
-    //   {path:   '',component: HomeComponent },
-    //   {path:   'products',component: ProductsComponent},
-    //   {path:   'shopping-cart',component: ShoppingCartComponent},
-    //   {path:   'check-out',component: CheckOutComponent},
-    //   {path:   'order-success',component: OrderSuccessComponent},
-    //   {path:   'login',component: LoginComponent},
-    //   {path:   'my/orders',component: MyOrdersComponent },
-    //   {path:   'admin/products',component: AdminProductsComponent},
-    //   {path:   'admin/orders',component: AdminOrdersComponent}
-    // ])
+    ReactiveFormsModule,
+    RouterModule.forRoot([
+     // {path:   '', component: HomeComponent },
+     // {path:   'products', component: ProductsComponent},
+     // {path:   'shopping-cart', component: ShoppingCartComponent},
+     // {path:   'check-out', component: CheckOutComponent},
+     // {path:   'order-success', component: OrderSuccessComponent},
+     // {path:   'login', component: LoginComponent},
+     // {path:   'my/orders', component: MyOrdersComponent },
+        {path:   'admin/products', component: AdminProductsComponent},
+        {path:   'admin/product-form', component: ProductFormComponent},
+        {path:   'admin/product-form-list', component: ProductFormListComponent},
+     // {path:   'admin/orders', component: AdminOrdersComponent}
+    ])
   ],
   providers: [ProductService, CategoryService, UserService],
   bootstrap: [AppComponent]

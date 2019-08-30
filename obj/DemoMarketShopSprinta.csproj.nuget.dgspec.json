@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MadMange\\Desktop\\Repository_Temp\\DemoMarketShop\\DemoMarketShopSprinta.csproj": {}
+    "C:\\Users\\shiva\\source\\repos\\NewRepo\\Save-Product\\DemoMarketShop\\DemoMarketShop\\DemoMarketShopSprinta.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MadMange\\Desktop\\Repository_Temp\\DemoMarketShop\\DemoMarketShopSprinta.csproj": {
+    "C:\\Users\\shiva\\source\\repos\\NewRepo\\Save-Product\\DemoMarketShop\\DemoMarketShop\\DemoMarketShopSprinta.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MadMange\\Desktop\\Repository_Temp\\DemoMarketShop\\DemoMarketShopSprinta.csproj",
+        "projectUniqueName": "C:\\Users\\shiva\\source\\repos\\NewRepo\\Save-Product\\DemoMarketShop\\DemoMarketShop\\DemoMarketShopSprinta.csproj",
         "projectName": "DemoMarketShopSprinta",
-        "projectPath": "C:\\Users\\MadMange\\Desktop\\Repository_Temp\\DemoMarketShop\\DemoMarketShopSprinta.csproj",
-        "packagesPath": "C:\\Users\\MadMange\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MadMange\\Desktop\\Repository_Temp\\DemoMarketShop\\obj\\",
+        "projectPath": "C:\\Users\\shiva\\source\\repos\\NewRepo\\Save-Product\\DemoMarketShop\\DemoMarketShop\\DemoMarketShopSprinta.csproj",
+        "packagesPath": "C:\\Users\\shiva\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\shiva\\source\\repos\\NewRepo\\Save-Product\\DemoMarketShop\\DemoMarketShop\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\MadMange\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\shiva\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -26,8 +26,7 @@ export class UserService {
     if (passwordCtrl.errors == null || 'passwordMismatch' in passwordCtrl.errors) {
       if (fb.get('Password').value !== passwordCtrl.value) {
         passwordCtrl.setErrors({ passwordMismatch: true });
-      }
-      else {
+      } else {
         passwordCtrl.setErrors(null);
       }
     }

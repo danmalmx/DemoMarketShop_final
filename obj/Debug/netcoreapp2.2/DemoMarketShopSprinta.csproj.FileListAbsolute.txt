@@ -64,3 +64,17 @@ C:\Users\MadMange\Desktop\Repository_Temp\DemoMarketShop\obj\Debug\netcoreapp2.2
 C:\Users\MadMange\Desktop\Repository_Temp\DemoMarketShop\obj\Debug\netcoreapp2.2\DemoMarketShopSprinta.RazorTargetAssemblyInfo.cache
 C:\Users\MadMange\Desktop\Repository_Temp\DemoMarketShop\obj\Debug\netcoreapp2.2\DemoMarketShopSprinta.dll
 C:\Users\MadMange\Desktop\Repository_Temp\DemoMarketShop\obj\Debug\netcoreapp2.2\DemoMarketShopSprinta.pdb
+C:\Users\shiva\source\repos\NewRepo\Save-Product\DemoMarketShop\DemoMarketShop\obj\Debug\netcoreapp2.2\DemoMarketShopSprinta.csprojAssemblyReference.cache
+C:\Users\shiva\source\repos\NewRepo\Save-Product\DemoMarketShop\DemoMarketShop\obj\Debug\netcoreapp2.2\DemoMarketShopSprinta.dll
+C:\Users\shiva\source\repos\NewRepo\Save-Product\DemoMarketShop\DemoMarketShop\obj\Debug\netcoreapp2.2\DemoMarketShopSprinta.pdb
+C:\Users\shiva\source\repos\NewRepo\Save-Product\DemoMarketShop\DemoMarketShop\bin\Debug\netcoreapp2.2\DemoMarketShopSprinta.deps.json
+C:\Users\shiva\source\repos\NewRepo\Save-Product\DemoMarketShop\DemoMarketShop\bin\Debug\netcoreapp2.2\DemoMarketShopSprinta.runtimeconfig.json
+C:\Users\shiva\source\repos\NewRepo\Save-Product\DemoMarketShop\DemoMarketShop\bin\Debug\netcoreapp2.2\DemoMarketShopSprinta.runtimeconfig.dev.json
+C:\Users\shiva\source\repos\NewRepo\Save-Product\DemoMarketShop\DemoMarketShop\bin\Debug\netcoreapp2.2\DemoMarketShopSprinta.dll
+C:\Users\shiva\source\repos\NewRepo\Save-Product\DemoMarketShop\DemoMarketShop\bin\Debug\netcoreapp2.2\DemoMarketShopSprinta.pdb
+C:\Users\shiva\source\repos\NewRepo\Save-Product\DemoMarketShop\DemoMarketShop\obj\Debug\netcoreapp2.2\DemoMarketShopSprinta.csproj.CoreCompileInputs.cache
+C:\Users\shiva\source\repos\NewRepo\Save-Product\DemoMarketShop\DemoMarketShop\obj\Debug\netcoreapp2.2\DemoMarketShopSprinta.RazorAssemblyInfo.cache
+C:\Users\shiva\source\repos\NewRepo\Save-Product\DemoMarketShop\DemoMarketShop\obj\Debug\netcoreapp2.2\DemoMarketShopSprinta.RazorAssemblyInfo.cs
+C:\Users\shiva\source\repos\NewRepo\Save-Product\DemoMarketShop\DemoMarketShop\obj\Debug\netcoreapp2.2\DemoMarketShopSprinta.AssemblyInfoInputs.cache
+C:\Users\shiva\source\repos\NewRepo\Save-Product\DemoMarketShop\DemoMarketShop\obj\Debug\netcoreapp2.2\DemoMarketShopSprinta.AssemblyInfo.cs
+C:\Users\shiva\source\repos\NewRepo\Save-Product\DemoMarketShop\DemoMarketShop\obj\Debug\netcoreapp2.2\DemoMarketShopSprinta.RazorTargetAssemblyInfo.cache

@@ -32,8 +32,8 @@ export class HomeComponent implements OnInit {
         //   this.products.filter(p => { p.category === this.category }) :
         //   this.products;
 
-        //this.category$ = params.get('category');    // Titta på senare: Mange
-        //this.filteredProducts = (this.category) ?  // Video 314 @ 6:12
+        // this.category$ = params.get('category');    // Titta på senare: Mange
+        // this.filteredProducts = (this.category) ?  // Video 314 @ 6:12
       });
     }
 

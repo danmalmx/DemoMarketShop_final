@@ -8,7 +8,7 @@ import { Category } from './category.model';
 })
 export class CategoryService {
   readonly rootUrl = 'https://localhost:44318/api';
-
+  category: Category = <Category>{};
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Category[]> {

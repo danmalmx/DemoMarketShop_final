@@ -103,3 +103,6 @@ div.form-group label:first-child{
 img {
   max-height: 150px;
 }
+table tr:hover{
+  cursor: pointer;
+}
