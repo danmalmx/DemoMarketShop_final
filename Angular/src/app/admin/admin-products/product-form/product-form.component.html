@@ -1,0 +1,35 @@
+
+ <form #form="ngForm" autocomplete="off" (submit)="save(form)" >
+   <input type="hidden" name="ProductId" [value]="productService.product.ProductId">
+  <div class="form-group">
+    <label for="ProductName">Title</label>
+  <input name="ProductName" #ProductName="ngModel" [(ngModel)]="productService.product.ProductName" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="ProductDescription">Description</label>
+  <input name="ProductDescription" #ProductDescription="ngModel" [(ngModel)]="productService.product.ProductDescription" type="text" class="form-control">
+  </div>
+   <div class="form-group">
+    <label for="ProductPrice">Price</label>
+    <div class="input-group-prepend">
+        <span class="input-group-text">$</span>
+        <input  name="ProductPrice" #ProductPrice="ngModel" [(ngModel)]="productService.product.ProductPrice" type="number" class="form-control" >
+      </div>
+  </div>
+ <div class="form-group">
+    <label for="CategoryId">Category</label>
+    <select  name = "CategoryId" #category ="ngModel" [(ngModel)]="productService.product.CategoryId" type="text" class="form-control" >
+      <option value=""></option>
+     <option *ngFor="let c of Categories$ | async" [value]="c.CategoryId">{{c.CategoryName}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="ProductImage">Image URL</label>
+    <input  name="ProductImage" #ProductImage="ngModel" [(ngModel)]="productService.product.ProductImage" type="text" class="form-control" >
+  </div>
+ <div class="form-group">
+  <button class="btn btn-success btn-lg btn-block" (click)="save(form.value)">Click to save!</button>
+</div>
+</form>
+
+
