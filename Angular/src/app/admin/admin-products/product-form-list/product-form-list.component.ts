@@ -9,27 +9,27 @@ import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-product-form-list',
   templateUrl: './product-form-list.component.html',
-  styles: []
+  styleUrls: ['./product-form-list.component.css']
 })
 export class ProductFormListComponent implements OnInit {
-  constructor(public productService: ProductService,  private toaster: ToastrService) { }
+  constructor(public productService: ProductService, private toaster: ToastrService) { }
 
   ngOnInit() {
     this.productService.refreshList();
   }
   populateForm(p: Product) {
-    this.productService.product = Object.assign({}, p) ;
+    this.productService.product = Object.assign({}, p);
   }
   onDelete(ProductId) {
-    if (confirm ('Are you sure to delete this record ?')) {
-    this.productService.delete(ProductId)
-    .subscribe(res => {
-      this.productService.refreshList();
-      this.toaster.warning('Deleted successfuly', 'Product Register');
-    },
-      err => {
-        console.log(err);
-      });
+    if (confirm('Are you sure to delete this record ?')) {
+      this.productService.delete(ProductId)
+        .subscribe(res => {
+          this.productService.refreshList();
+          this.toaster.warning('Deleted successfuly', 'Product Register');
+        },
+          err => {
+            console.log(err);
+          });
     }
   }
 

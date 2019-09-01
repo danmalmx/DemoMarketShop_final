@@ -11,19 +11,19 @@ import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-product-form',
   templateUrl: './product-form.component.html',
-  styles: []
+  styleUrls: ['./product-form.component.css']
 })
 export class ProductFormComponent implements OnInit {
-  Categories$  ;
+  Categories$;
   product = new Product();
-  category: Category ;
+  category: Category;
   constructor(public categoryService: CategoryService, public productService: ProductService, private toaster: ToastrService) {
     this.Categories$ = categoryService.getAll();
   }
 
   save(f: Product, form: NgForm) {
-   f.OrderId = 1;
-   if (this.productService.product.ProductId == 0) {
+    f.OrderId = 1;
+    if (this.productService.product.ProductId == 0) {
       this.insertRecord(f, form);
     }
     // tslint:disable-next-line: one-line
@@ -34,26 +34,26 @@ export class ProductFormComponent implements OnInit {
   insertRecord(f: Product, form: NgForm) {
     this.productService.create(f).subscribe(
       res => {
-      this.resetForm(form);
-      this.toaster.success('Submitted successfully', 'Product Register');
-      this.productService.refreshList();
-     },
-     err => {
-       console.log(err);
-     }
-   );
+        this.resetForm(form);
+        this.toaster.success('Submitted successfully', 'Product Register');
+        this.productService.refreshList();
+      },
+      err => {
+        console.log(err);
+      }
+    );
   }
   uppdateRecord(form: NgForm) {
     this.productService.uppdate().subscribe(
       res => {
-      this.resetForm(form);
-      this.toaster.info('Submitted successfully', 'Product Register');
-      this.productService.refreshList();
-     },
-     err => {
-       console.log(err);
-     }
-   );
+        this.resetForm(form);
+        this.toaster.info('Submitted successfully', 'Product Register');
+        this.productService.refreshList();
+      },
+      err => {
+        console.log(err);
+      }
+    );
   }
 
   ngOnInit() {
@@ -62,16 +62,16 @@ export class ProductFormComponent implements OnInit {
   resetForm(form?: NgForm) {
 
     this.productService.product = {
-      ProductId : 0 ,
-      ProductName : '' ,
-      ProductPrice : 0 ,
-      ProductImage : '',
-      ProductQuantity : 0,
-      CategoryId : 0,
-      OrderId : 0,
-      ProductDescription : ''
+      ProductId: 0,
+      ProductName: '',
+      ProductPrice: 0,
+      ProductImage: '',
+      ProductQuantity: 0,
+      CategoryId: 0,
+      OrderId: 0,
+      ProductDescription: ''
 
-  };
-}
+    };
+  }
 }
 
