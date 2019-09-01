@@ -18,15 +18,17 @@ export class ProductService {
     return this.http.get<Product[]>(this.rootUrl + '/Products');
   }
 
-  create(Product): Observable<Product> {
-    return this.http.post<Product>(this.rootUrl + '/Products', Product);
+  create(formData: Product) {
+    return this.http.post(this.rootUrl + '/Products', formData);
   }
 
-  uppdate(): Observable<Product> {
-    return this.http.put<Product>(this.rootUrl + '/Products' + this.product.ProductId, this.product);
+  uppdate(formData: Product) {
+    return this.http.put(this.rootUrl + '/Products/' + formData.ProductId, formData);
   }
-  delete(id): Observable<Product> {
-    return this.http.delete<Product>(this.rootUrl + '/Products' + id);
+
+  delete(id: number) {
+    return this.http.delete(this.rootUrl + '/Products/' + id);
+
   }
   refreshList() {
     this.http.get<Product[]>(this.rootUrl + '/Products').toPromise().then(res => this.list = res as Product[]);

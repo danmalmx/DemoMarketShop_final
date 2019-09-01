@@ -17,20 +17,49 @@ export class ProductFormListComponent implements OnInit {
   ngOnInit() {
     this.productService.refreshList();
   }
+
   populateForm(p: Product) {
     this.productService.product = Object.assign({}, p);
   }
-  onDelete(ProductId) {
+
+  onDelete(id: number) {
     if (confirm('Are you sure to delete this record ?')) {
-      this.productService.delete(ProductId)
+      this.productService.delete(id)
         .subscribe(res => {
           this.productService.refreshList();
-          this.toaster.warning('Deleted successfuly', 'Product Register');
+          this.toaster.warning('Product deleted', '');
         },
           err => {
             console.log(err);
           });
     }
+  }
+
+  updateRecord(form: NgForm) {
+    if (confirm('Are you sure you want to update the order?')) {
+      this.productService.uppdate(form.value).subscribe(
+        res => {
+          this.toaster.info('Product updated', '');
+          this.resetForm(form);
+          this.productService.refreshList();
+        })
+    }
+  }
+
+  resetForm(form?: NgForm) {
+    if (form != null) {
+      form.reset();
+    }
+    this.productService.product = {
+      ProductId: null,
+      ProductName: '',
+      ProductDescription: '',
+      ProductImage: '',
+      ProductPrice: null,
+      ProductQuantity: null,
+      CategoryId: null,
+      OrderId: null
+    };
   }
 
 }

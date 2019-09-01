@@ -35,7 +35,7 @@ export class ProductFormComponent implements OnInit {
     this.productService.create(f).subscribe(
       res => {
         this.resetForm(form);
-        this.toaster.success('Submitted successfully', 'Product Register');
+        this.toaster.success('Submitted successfully', '');
         this.productService.refreshList();
       },
       err => {
@@ -44,10 +44,10 @@ export class ProductFormComponent implements OnInit {
     );
   }
   uppdateRecord(form: NgForm) {
-    this.productService.uppdate().subscribe(
+    this.productService.uppdate(form.value).subscribe(
       res => {
         this.resetForm(form);
-        this.toaster.info('Submitted successfully', 'Product Register');
+        this.toaster.info('Submitted successfully', '');
         this.productService.refreshList();
       },
       err => {

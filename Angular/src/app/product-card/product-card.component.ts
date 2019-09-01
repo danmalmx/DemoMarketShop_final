@@ -3,9 +3,6 @@ import { ProductService } from './../shared/product.service';
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { ShoppingCartService } from '../shared/shopping-cart.service';
 import { ShoppingCart, ResponseShoppingCart } from '../shared/shopping-cart.model';
-import { HttpBackend } from '@angular/common/http';
-import { Subscription } from 'rxjs';
-import { prependOnceListener } from 'cluster';
 
 @Component({
   selector: 'product-card',
@@ -47,7 +44,7 @@ export class ProductCardComponent implements OnInit {
       }
     });
     if (tempCartId > 0) {
-    return tempCartId;
+      return tempCartId;
     }
     return 0;
   }
@@ -59,8 +56,8 @@ export class ProductCardComponent implements OnInit {
     let inProdName = product.ProductName;
     let inProdPrice = product.ProductPrice;
     await this.shoppingCartService.returnAllProdInShoppingCart()
-    .toPromise()
-    .then(res => this.shopList = res);
+      .toPromise()
+      .then(res => this.shopList = res);
 
     console.log('Jag har Cart: ' + cartId);
     console.log('Klickat på ProduktId: ' + inProduct);
@@ -72,7 +69,8 @@ export class ProductCardComponent implements OnInit {
         this.quantityShop = returnValue;
         this.shoppingCartService.updateQuantityWithOne(element.Id, element).subscribe((res: any) => this.obj = res);
         this.isInShop = true;
-        }});
+      }
+    });
 
     if (!this.isInShop) {
       this.newShopObj.ShoppingCartId = cartId;

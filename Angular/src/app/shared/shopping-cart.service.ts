@@ -12,7 +12,9 @@ import { ConcatSource } from 'webpack-sources';
   providedIn: 'root'
 })
 export class ShoppingCartService {
-  readonly rootUrl = 'https://localhost:44318/api';
+  // readonly rootUrl = 'https://localhost:44318/api';
+  readonly rootUrl = 'https://localhost:5001/api';
+
   objTest = new ShoppingCart();
   obj = new ShoppingCart();
   objProd = new Product();
@@ -29,8 +31,8 @@ export class ShoppingCartService {
     const cartId = localStorage.getItem('cartId');
     let cartIdNumber = parseInt(cartId);
     await this.http.get<ShoppingCart[]>(this.rootUrl + '/ShoppingCart') // .subscribe(res => this.cartList = res);
-    .toPromise()
-    .then(res => this.cartList = res);
+      .toPromise()
+      .then(res => this.cartList = res);
     this.numberOfItemInShop = 0;
     this.cartList.forEach(element => {
       if (cartIdNumber === element.ShoppingCartId) {
@@ -61,8 +63,9 @@ export class ShoppingCartService {
         return this.returData.Id;
       });
     } else {
-        return parseInt(cartId, 10);
-    }}
+      return parseInt(cartId, 10);
+    }
+  }
 
   updateQuantityWithOne(elemenId: number, prod: ShoppingCart) {
     return this.http.put(this.rootUrl + '/ShoppingCart/' + elemenId, prod);
