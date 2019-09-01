@@ -27,6 +27,19 @@ export class ShoppingCartService {
 
   constructor(private http: HttpClient) { }
 
+  async clearCart(userId) {
+    console.log("UserID: " + userId);
+    await this.http.get<ShoppingCart[]>(this.rootUrl + '/ShoppingCart')
+    .toPromise()
+    .then(res => this.cartList = res);
+    this.cartList.forEach(element => {
+      if (userId === element.ShoppingCartId) {
+        this.deleteItemInCart(element.Id).subscribe(res => this.obj = res);
+      }
+    });
+    return true;
+  }
+
   async returnNumberOfItemsInCart() {
     const cartId = localStorage.getItem('cartId');
     let cartIdNumber = parseInt(cartId);
@@ -65,6 +78,10 @@ export class ShoppingCartService {
     } else {
       return parseInt(cartId, 10);
     }
+  }
+
+  deleteItemInCart(Id: number): Observable<ShoppingCart> {
+    return this.http.delete<ShoppingCart>(this.rootUrl + '/ShoppingCart/' + Id);
   }
 
   updateQuantityWithOne(elemenId: number, prod: ShoppingCart) {
