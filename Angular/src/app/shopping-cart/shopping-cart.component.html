@@ -2,6 +2,7 @@
 <ng-container>
   <p>
     You have {{ shoppingCartService.numberOfItemInShop }} items in your shopping cart.
+    <button *ngIf="totalPrice !== 0" (click)="clearCart()" class="btn btn-light btn-sm">Clear Shopping Cart</button>
   </p>
   <table class="table">
     <thead>
@@ -12,18 +13,21 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let i of shopList">
-        <td>{{ i.ProductName }}</td>
-        <td>{{ i.Quantity }}</td>
-        <td>{{ i.ProductPrice }}</td>
-      </tr>
+      <ng-container >
+        <tr *ngFor="let i of shopListUpdated">
+          <td>{{ i.ProductName }}</td>
+          <td>{{ i.Quantity }}</td>
+          <td>{{ i.ProductPrice }}kr</td>
+        </tr>
+      </ng-container>
     </tbody>
     <tfoot>
       <tr>
-        <td></td>
-        <td></td>
-        <td>{{ totalPrice }}</td>
+        <th></th>
+        <th></th>
+        <th>{{ totalPrice }}kr</th>
       </tr>
     </tfoot>
   </table>
+  <a *ngIf="totalPrice !== 0" routerLink="/check-out" class="btn btn-primary">Check Out</a>
 </ng-container>

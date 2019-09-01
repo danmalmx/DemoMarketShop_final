@@ -1,3 +1,5 @@
+import { OrderSuccessComponent } from './order-success/order-success.component';
+import { CheckOutComponent } from './check-out/check-out.component';
 import { ProductsComponent } from './products/products.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
@@ -36,6 +38,8 @@ const routes: Routes = [
   {
     path: '', component: HomeComponent, canActivate: [AuthGuard],
     children: [
+      { path: 'order-success', component: OrderSuccessComponent, data: { permittedRoles: ['Customer'] } },
+      { path: 'check-out', component: CheckOutComponent, data: { permittedRoles: ['Customer'] } },
       { path: 'shopping-cart', component: ShoppingCartComponent, data: { permittedRoles: ['Customer'] } },
       { path: 'products/products', component: ProductsComponent, data: { permittedRoles: ['Customer'] } },
       { path: 'admin/admin-orders', component: AdminOrdersComponent, canActivate: [AuthGuard], data: { permittedRoles: ['Admin'] } },

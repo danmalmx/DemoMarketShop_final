@@ -1,3 +1,4 @@
+import { ProductFormListComponent } from './admin/admin-products/product-form-list/product-form-list.component';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -32,6 +33,7 @@ import { LoginComponent } from './user/login/login.component';
 import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
 import { ForbiddenComponent } from './admin/forbidden/forbidden.component';
 import { OrdersServices } from './shared/orders.service';
+import { ProductFormComponent } from './admin/admin-products/product-form/product-form.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,9 @@ import { OrdersServices } from './shared/orders.service';
     LoginComponent,
     AdminPanelComponent,
     ForbiddenComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    ProductFormComponent,
+    ProductFormListComponent
   ],
   imports: [
     BrowserModule,

@@ -40,9 +40,6 @@ export class ProductCardComponent implements OnInit {
     let tempCartId: number;
     this.shopList2.forEach(element => {
       if (cartId === element.ShoppingCartId && product.ProductId === element.ProductId) {
-        // console.log("ShoppingCartId: " + element.ShoppingCartId);
-        // console.log("ProductId: " + element.ProductId);
-        // console.log("Quantity: " + element.Quantity);
         tempCartId = element.Quantity;
       }
     });

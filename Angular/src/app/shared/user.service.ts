@@ -93,7 +93,7 @@ export class UserService {
 public connectServer() {
     this.http.get(this.rootUrl + '/UserProfile')
       .subscribe(
-        data => sessionStorage.setItem('UserName', data.UserName),
+        data => data, //sessionStorage.setItem('UserName', data.UserName),
         err => console.log('err')
         );
   }
