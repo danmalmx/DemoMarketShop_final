@@ -12,8 +12,8 @@ export class UserService {
   body: any;
   user: any;
 
-  // readonly rootUrl = 'https://localhost:5001/api';
-  readonly rootUrl = 'https://localhost:44318/api';
+  readonly rootUrl = 'https://localhost:5001/api';
+  // readonly rootUrl = 'https://localhost:44318/api';
 
 
   formModel = this.fb.group({
@@ -93,7 +93,7 @@ export class UserService {
 public connectServer() {
     this.http.get(this.rootUrl + '/UserProfile')
       .subscribe(
-        data => sessionStorage.setItem('UserName', data.UserName),
+        data => data,
         err => console.log('err')
         );
   }
