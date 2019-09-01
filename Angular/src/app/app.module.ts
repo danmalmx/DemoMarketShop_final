@@ -5,7 +5,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
@@ -54,17 +57,20 @@ import { OrdersServices } from './shared/orders.service';
     ProductCardComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
     MatButtonModule,
-    NgbModule,
-    HttpClientModule,
+    MatIconModule,
     MatFormFieldModule,
     MatInputModule,
+    MatMenuModule,
+    BrowserModule,
+    AppRoutingModule,
+    NgbModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     ReactiveFormsModule,
     FormsModule,
+    MatToolbarModule,
     // RouterModule.forRoot([
     //   {path:   '',component: HomeComponent },
     //   {path:   'products',component: ProductsComponent},
