@@ -71,7 +71,4 @@ export class CheckOutComponent implements OnInit, OnDestroy {
     this.totalPrice = 0;
     this.ngOnInit();
   }
-
-  save(f: Product, form: NgForm) { }
-
 }

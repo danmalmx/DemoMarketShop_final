@@ -12,8 +12,8 @@ import { ConcatSource } from 'webpack-sources';
   providedIn: 'root'
 })
 export class ShoppingCartService {
-  // readonly rootUrl = 'https://localhost:44318/api';
-  readonly rootUrl = 'https://localhost:5001/api';
+  readonly rootUrl = 'https://localhost:44318/api';
+  // readonly rootUrl = 'https://localhost:5001/api';
 
   objTest = new ShoppingCart();
   obj = new ShoppingCart();

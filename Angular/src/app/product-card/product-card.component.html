@@ -4,9 +4,10 @@
       <h5 class="card-title">{{ product.ProductName }}</h5>
       <p class="card-text">{{ product.ProductDescription }}: {{ product.ProductPrice }}kr</p>
     </div>
-    <div> {{ showOnInit(product) }} {{ quantityShop }} </div>
+    <!-- <div> {{ showOnInit(product) }} {{ quantityShop }} </div> -->
     <div class="card-footer">
-        <button *ngIf="showOnInit(product) === 0 && quantityShop == undefined || quantityShop === 0; else updateQuantity" (click)="addToCart(product,1)" class="btn btn-secondary btn-block">Add to Cart</button>
+        <button *ngIf="showOnInit(product) === 0 && quantityShop == undefined || quantityShop === 0; else updateQuantity" 
+          (click)="addToCart(product,1)" class="btn btn-secondary btn-block">Add to Cart</button>
         <ng-template #updateQuantity>
           <div class="row no-gutters">
             <div class="col2 ">
@@ -22,5 +23,3 @@
         </ng-template>
     </div>
 </div>
-
-<!-- {{ quantityShop }} {{ showOnInit(product) }} *ngIf="showOnInit(product) === 0" -->

@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductService {
-  // readonly rootUrl = 'https://localhost:44318/api';
-  readonly rootUrl = 'https://localhost:5001/api';
+  readonly rootUrl = 'https://localhost:44318/api';
+  // readonly rootUrl = 'https://localhost:5001/api';
 
   list: Product[];
   product: Product = <Product>{};

@@ -10,8 +10,8 @@ import { Product } from '../shared/product.model';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-  products: Product[];
-  filteredProducts: Product[];
+  products: Product[] = [];
+  filteredProducts: Product[] = [];
   categories$;
   category: string;
 
@@ -19,19 +19,20 @@ export class ProductsComponent implements OnInit {
     route: ActivatedRoute,
     productService: ProductService,
     categoryService: CategoryService) {
-      productService.getAll().subscribe(products => this.products = products);
-
       this.categories$ = categoryService.getAll();
+
+      productService.getAll().subscribe(products => { this.products = products 
+
+      
 
       route.queryParamMap.subscribe(params => {
         this.category = params.get('category');
+        console.log("Category: " + this.category);
 
-        // this.filteredProducts = (this.category) ?
-        //   this.products.filter(p => { p.category === this.category }) :
-        //   this.products;
-
-        //this.category$ = params.get('category');    // Titta på senare: Mange
-        //this.filteredProducts = (this.category) ?  // Video 314 @ 6:12
+        this.filteredProducts = (this.category) ?
+          this.products.filter(p => p.CategoryId.toString() === this.category) :
+          this.products;
+          });
       });
     }
 
