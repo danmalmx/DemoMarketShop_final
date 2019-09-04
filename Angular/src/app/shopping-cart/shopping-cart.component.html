@@ -1,1 +1,33 @@
-<p>shopping-cart works!</p>
+<h1>Shooping Cart</h1>
+<ng-container>
+  <p>
+    You have {{ shoppingCartService.numberOfItemInShop }} items in your shopping cart.
+    <button *ngIf="totalPrice !== 0" (click)="clearCart()" class="btn btn-light btn-sm">Clear Shopping Cart</button>
+  </p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container >
+        <tr *ngFor="let i of shopListUpdated">
+          <td>{{ i.ProductName }}</td>
+          <td>{{ i.Quantity }}</td>
+          <td>{{ i.ProductPrice }}kr</td>
+        </tr>
+      </ng-container>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th></th>
+        <th></th>
+        <th>{{ totalPrice }}kr</th>
+      </tr>
+    </tfoot>
+  </table>
+  <a *ngIf="totalPrice !== 0" routerLink="/check-out" class="btn btn-primary">Check Out</a>
+</ng-container>

@@ -2,14 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DemoMarketShopSprinta.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DemoMarketShopSprinta.Controllers
 {
+
     [Route("api/[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase
     {
+
+        public ValuesController(AuthenticationContext Idcontext)
+        {
+
+        }
+
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()

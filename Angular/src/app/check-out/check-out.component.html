@@ -1,1 +1,45 @@
-<p>check-out works!</p>
+<h2>Shipping</h2>
+<div class="row">
+  <div class="col-6">
+      <form #form="ngForm" autocomplete="off" (submit)="save(form)" >
+         <div class="form-group">
+           <label for="Name">Name</label>
+         <input name="Name" #ProductName="ngModel" [(ngModel)]="productService.product.ProductImage" type="text" class="form-control">
+         </div>
+         <div class="form-group">
+            <label for="Address">Address</label>
+          <input name="Address" #ProductName="ngModel" [(ngModel)]="productService.product.ProductName" type="text" class="form-control">
+          </div>
+          <div class="form-group">
+              <label for="ProductName">City</label>
+            <input name="ProductName" #ProductName="ngModel" [(ngModel)]="productService.product.ProductDescription" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="ProductName">eMail</label>
+              <input name="ProductName" #ProductName="ngModel" [(ngModel)]="productService.product.ProductQuantity" type="text" class="form-control">
+              </div>
+        <div class="form-group">
+         <a routerLink="/order-success" class="btn btn-success btn-lg" (click)="clearCart()">Place Order</a>
+       </div>
+       </form>
+</div>
+<div class="col-6">
+  <div class="card-body">
+    <h5 class="card-title">Order Summary</h5>
+    <p class="card-text">You have {{ cartNrItems }} items in your shopping cart.</p>
+    <ul class="list-group list-group-flush">
+      <li *ngFor="let item of shopListUpdated" class="list-group-item">{{ item.Quantity }} x {{ item.ProductName }}
+        <div class="float-right">
+          {{ item.ProductPrice }}Kr
+        </div>
+      </li>
+      <li class="list-group-item font-weight-bold">
+        Total
+        <div class="float-right">
+          {{ totalPrice }}Kr
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+

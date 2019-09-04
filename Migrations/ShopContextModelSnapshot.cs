@@ -113,6 +113,27 @@ namespace DemoMarketShopSprinta.Migrations
                     b.ToTable("Products");
                 });
 
+            modelBuilder.Entity("DemoMarketShopSprinta.Models.ShoppingCart", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("ProductId");
+
+                    b.Property<string>("ProductName");
+
+                    b.Property<int>("ProductPrice");
+
+                    b.Property<int?>("Quantity");
+
+                    b.Property<int?>("ShoppingCartId");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ShoppingCarts");
+                });
+
             modelBuilder.Entity("DemoMarketShopSprinta.Models.Order", b =>
                 {
                     b.HasOne("DemoMarketShopSprinta.Models.Customer", "Customer")

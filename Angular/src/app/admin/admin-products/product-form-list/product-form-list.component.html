@@ -1,0 +1,12 @@
+<table class="table table-hover">
+  <tr *ngFor="let p of productService.list">
+    <!-- <td (click)="populateForm(p)">{{p.ProductId}}</td> -->
+    <td (click)="populateForm(p)">{{p.ProductName}}</td>
+    <!-- <td (click)="populateForm(p)">{{p.CategoryId}}</td> -->
+    <td (click)="populateForm(p)">{{p.ProductPrice}}</td>
+    <td (click)="populateForm(p)">{{p.ProductDescription}}</td>
+    <td (click)="populateForm(p)"><img src="{{p.ProductImage}}" alt=""></td>
+    <td><i (click)="onDelete(p.ProductId)" class="fa fa-trash text-danger"></i>
+    </td>
+  </tr>
+</table>

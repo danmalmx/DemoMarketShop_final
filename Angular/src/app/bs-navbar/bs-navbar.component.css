@@ -1,3 +1,21 @@
-.dropdown-toggle{
+
+.navbar{
+    color: #ccccff !important  ;
+    background-color: #ccccff !important  ;
     cursor: pointer;
+}
+.right {
+  display: flex;
+  float: right;
+}
+
+.top {
+  overflow: hidden;
+  position: fixed; 
+  top: 0;
+  width: 100%;
+}
+
+.dropdown-toggle {
+  color: #046e94 !important;
 }

@@ -3,7 +3,8 @@ import { ProductService } from './../shared/product.service';
 import { CategoryService } from '../shared/category.service';
 import { Product } from './../shared/product.model';
 import { ToastrService } from 'ngx-toastr';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from '../shared/user.service';
 
 @Component({
   selector: 'app-home',
@@ -20,7 +21,9 @@ export class HomeComponent implements OnInit {
   constructor(
     route: ActivatedRoute,
     productService: ProductService,
-    categoryService: CategoryService) {
+    categoryService: CategoryService) 
+    
+    {
       productService.getAll().subscribe(products => this.products = products);
 
       this.categories$ = categoryService.getAll();
@@ -32,11 +35,19 @@ export class HomeComponent implements OnInit {
         //   this.products.filter(p => { p.category === this.category }) :
         //   this.products;
 
-        //this.category$ = params.get('category');    // Titta på senare: Mange
-        //this.filteredProducts = (this.category) ?  // Video 314 @ 6:12
+        // this.category$ = params.get('category');    // Titta på senare: Mange
+        // this.filteredProducts = (this.category) ?  // Video 314 @ 6:12
       });
+    }
+
+    filter(query: string) {
+      this.filteredProducts = (query) ?
+      this.products.filter(p => p.ProductName.toLowerCase().includes(query.toLowerCase())) :
+      this.products;
     }
 
   ngOnInit() {
   }
+
+
 }

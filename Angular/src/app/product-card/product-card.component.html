@@ -1,0 +1,25 @@
+<div class="card" style="width: 15rem;">
+    <img src="{{ product.ProductImage }}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{ product.ProductName }}</h5>
+      <p class="card-text">{{ product.ProductDescription }}: {{ product.ProductPrice }}kr</p>
+    </div>
+    <!-- <div> {{ showOnInit(product) }} {{ quantityShop }} </div> -->
+    <div class="card-footer">
+        <button *ngIf="showOnInit(product) === 0 && quantityShop == undefined || quantityShop === 0; else updateQuantity" 
+          (click)="addToCart(product,1)" class="btn btn-secondary btn-block">Add to Cart</button>
+        <ng-template #updateQuantity>
+          <div class="row no-gutters">
+            <div class="col2 ">
+              <button (click)="addToCart(product,-1)" class="btn btn-secondary btn-block">-</button>
+            </div>
+            <div class="col text-center">
+               {{ quantityShop }} in cart
+            </div>
+            <div class="col2">
+              <button (click)="addToCart(product,1)" class="btn btn-secondary btn-block">+</button>
+            </div>
+          </div>
+        </ng-template>
+    </div>
+</div>
